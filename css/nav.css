@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════
+   NAVEGACIÓN
+═══════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(254,254,254,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid var(--borde);
+}
+ 
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo-icon {
+  width: 36px; height: 36px;
+  background: var(--granate);
+  border-radius: 30%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blanco);
+  font-family: var(--display);
+  font-size: 1.3rem;
+  line-height: 1;
+  padding-bottom: 2px;
+  
+}
+.nav-logo-text {
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 3vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--negro);
+  white-space: nowrap;
+}
+.nav-logo-text span { color: var(--granate); }
+ 
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  font-family: Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--negro-3);
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--granate); }
+ 
+/* ═══════════════════════════════════════════
+   BOTÓN DEL NAVBAR (ACTUALIZADO)
+═══════════════════════════════════════════ */
+.btn-nav {
+  display: inline-block;
+  background: var(--granate);
+  color: var(--blanco) !important;
+  padding: 10px 24px;
+  border-radius: 8px !important; /* Bordes más suaves para hacer juego con el Hero */
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  box-shadow: 0 4px 10px rgba(139, 26, 43, 0.2); /* Sombra granate sutil */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.btn-nav:hover {
+  background: var(--granate-d) !important;
+  transform: translateY(-3px); /* Ligera elevación al pasar el cursor */
+  box-shadow: 0 6px 15px rgba(139, 26, 43, 0.3); /* Sombra más expansiva */
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+}
+
+@media (max-width: 768px) {
+  .nav-logo-text {
+    font-size: 1.1rem;
+  }
+}

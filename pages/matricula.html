@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrícula · Sonata Escuela de Arte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/nav.css">
+<link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+ 
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon" aria-hidden="true">𝄞</div>
+    <span class="nav-logo-text">Sonata <span>Arte</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#nosotros">Nosotros</a></li>
+    <li><a href="cursos.html">Cursos</a></li>
+    <li><a href="materiales.html">Materiales</a></li>
+    <li><a href="index.html#testimonios">Testimonios</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+    <li><a href="matricula.html" class="btn-nav">Matricúlate</a></li>
+  </ul>
+</nav>
+
+<section id="matricula-registro" class="matricula-glass-section">
+  
+  <div class="glass-overlay" aria-hidden="true"></div>
+
+  <div class="glass-content">
+    <p class="glass-eyebrow">ÚNETE A NOSOTROS</p>
+    <h2 class="glass-title">Tu primera clase<br><strong>te espera</strong></h2>
+    <p class="glass-desc">
+      Déjanos tus datos y un asesor de Sonata te contactará en menos de
+      24 horas para orientarte en el proceso de matrícula sin compromiso.
+    </p>
+
+    <form id="form-matricula" class="glass-form">
+      <div class="glass-row">
+        <input class="glass-input" type="text" id="m-nombre" name="nombre" placeholder="Nombre completo" required>
+        <input class="glass-input" type="email" id="m-correo" name="correo" placeholder="Correo electrónico" required>
+      </div>
+      
+      <input class="glass-input" type="tel" id="m-telefono" name="telefono" placeholder="Teléfono / WhatsApp">
+      
+      <select class="glass-input" id="m-curso" name="curso" required>
+        <option value="" disabled selected>¿Qué curso te interesa?</option>
+        <option>Piano</option>
+        <option>Guitarra</option>
+        <option>Canto</option>
+        <option>Violín</option>
+        <option>Teoría Musical</option>
+        <option>Estimulación Musical</option>
+        <option>Otro instrumento</option>
+      </select>
+      
+      <select class="glass-input" id="m-nivel" name="nivel">
+        <option value="" disabled selected>Nivel actual</option>
+        <option>Nunca he tocado</option>
+        <option>Principiante</option>
+        <option>Intermedio</option>
+        <option>Avanzado</option>
+      </select>
+      
+      <textarea class="glass-input" id="m-mensaje" name="mensaje" placeholder="¿Alguna consulta o comentario?" rows="3"></textarea>
+      
+      <button class="btn-g glass-btn" type="submit" id="m-submit-btn">Enviar solicitud de matrícula</button>
+      
+      <p id="m-feedback" class="glass-feedback"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Sonata <span>Arte</span></div>
+      <div class="footer-brand-sub">Escuela de Arte · Perú ®</div>
+      <p class="footer-brand-desc">Formando músicos y artistas con pasión, técnica y vocación desde 2009 en el corazón de Lima.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Escuela</div>
+      <ul>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="materiales.html">Materiales</a></li>
+        <li><a href="index.html#testimonios">Testimonios</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Matrícula</div>
+      <ul>
+        <li><a href="matricula.html">Inscríbete</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="https://wa.me/51987654321">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sonata Escuela de Arte · Lima, Perú · Todos los derechos reservados</span>
+    <span class="footer-nota" aria-hidden="true">𝄞</span>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script src="../js/matricula.js"></script>
+<script src="../js/supabase.js"></script>
+</body>
+</html>

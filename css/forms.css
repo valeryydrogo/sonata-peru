@@ -1,0 +1,125 @@
+/* ═══════════════════════════════════════════
+   BOTONES Y FORMULARIOS (ACTUALIZADOS)
+═══════════════════════════════════════════ */
+.btn-primary {
+  background: var(--granate);
+  color: var(--blanco);
+  padding: 14px 32px;
+  border-radius: 8px; /* Bordes un poco más suaves */
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(139, 26, 43, 0.25); /* Sombra color granate */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición muy fluida */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el texto y la flecha */
+  font-family: Sono, sans-serif;
+}
+
+.btn-primary:hover {
+  background: var(--granate-d);
+  transform: translateY(-3px); /* Efecto de flotar */
+  box-shadow: 0 8px 24px rgba(139, 26, 43, 0.35); /* Sombra más grande al flotar */
+}
+
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.6); /* Fondo apenas visible */
+  color: var(--negro-2);
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--borde-g); /* Borde con un tono granate sutil */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  font-family: Verdana, sans-serif;
+}
+
+.btn-outline:hover {
+  border-color: var(--granate);
+  color: var(--granate);
+  background: transparent;
+  transform: translateY(-3px); /* Efecto de flotar */
+  box-shadow: 0 8px 24px rgba(17, 16, 16, 0.06); /* Sombra gris muy suave */
+}
+
+/* Formulario Matrícula */
+.mat-form {
+  display: flex; gap: 10px;
+  max-width: 460px;
+  margin: 0 auto 16px;
+  flex-wrap: wrap; justify-content: center;
+}
+.mat-form input {
+  flex: 1; min-width: 200px;
+  padding: 13px 16px;
+  border-radius: 3px;
+  border: 0.5px solid rgba(254,254,254,0.25);
+  background: rgba(254,254,254,0.1);
+  color: var(--blanco);
+  font-family: var(--body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.mat-form input::placeholder { color: rgba(254,254,254,0.35); }
+.mat-form input:focus { border-color: rgba(254,254,254,0.6); }
+
+/* Formulario Contacto */
+.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+ 
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 0.5px solid var(--borde);
+  border-radius: 3px;
+  background: var(--blanco);
+  font-family: var(--body);
+  font-size: 0.88rem;
+  color: var(--negro);
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus { border-color: var(--cr2); }
+.contact-form textarea { resize: vertical; min-height: 110px; }
+
+@media (max-width: 900px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+
+/* El color y diseño de tu botón */
+.btn-cool {
+  padding: 14px; 
+  border: none; 
+  cursor: pointer; 
+  border-radius: 4px; 
+  width: 100%; 
+  font-weight: 600; 
+  color: #8b1a2b; /* Tu color granate */
+  background-color: #ffffff; /* Tu fondo blanco */
+  font-size: 1rem; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  
+  /* Esto hace que el hover se vea suave */
+  transition: all 0.3s ease; 
+}
+
+/* El efecto al pasar el mouse */
+.btn-cool:hover {
+  transform: translateY(-4px); /* Lo hace flotar hacia arriba */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Hace la sombra más grande */
+}
