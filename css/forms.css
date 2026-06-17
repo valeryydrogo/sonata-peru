@@ -109,17 +109,20 @@
   border-radius: 4px; 
   width: 100%; 
   font-weight: 600; 
-  color: #8b1a2b; /* Tu color granate */
-  background-color: #ffffff; /* Tu fondo blanco */
+  color: #faf7f4; /* Tu color granate */
+  background-color: transparent; /* Tu fondo blanco */
   font-size: 1rem; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
   
-  /* Esto hace que el hover se vea suave */
-  transition: all 0.3s ease; 
+ 
 }
 
 /* El efecto al pasar el mouse */
 .btn-cool:hover {
-  transform: translateY(-4px); /* Lo hace flotar hacia arriba */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Hace la sombra más grande */
+  background-color: #faf7f4; /* Se rellena de crema al pasar el mouse */
+  color: #8b1a2b; /* El texto se vuelve granate */
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  border-color: #faf7f4;
 }
