@@ -105,36 +105,23 @@
 .btn-cool {
   display: inline-block; 
   padding: 14px 28px;
-  /* Borde crema 100% visible y sólido */
-  border: 2px solid #faf7f4; 
+  border: none; /* Quitamos los bordes por completo */
   cursor: pointer;
   border-radius: 8px; 
   width: 100%;
   font-weight: 600;
-  /* Texto crema 100% visible */
-  color: #faf7f4; 
-  /* Un fondo apenas visible para que no parezca vacío */
-  background-color: rgba(250, 247, 244, 0.08); 
+  color: #ffffff; /* Texto totalmente blanco para máximo contraste */
+  background-color: #1A1818; /* Fondo sólido gris carbón casi negro */
   font-size: 1rem;
   letter-spacing: 0.05em;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra base para que resalte del fondo */
 }
 
 /* El efecto al pasar el mouse */
 .btn-cool:hover {
-  transform: translateY(-3px); /* Flota ligeramente */
-  
-  /* CAMBIO CLAVE: Un relleno sólido que se diferencia del fondo.
-     Usamos el rojo más claro de tu paleta. */
-  background-color: #b5253c; /* Tu variable --granate-l */
-  
-  /* El borde se vuelve crema puro para definir la caja */
-  border-color: #faf7f4; /* Tu variable --crema */
-  
-  /* El texto se vuelve crema puro para contrastar con el fondo sólido */
-  color: #faf7f4; /* Tu variable --crema */
-  
-  /* Sombra más amplia y con un tono granate claro */
-  box-shadow: 0 12px 30px rgba(181, 37, 60, 0.4);
+  transform: translateY(-3px); 
+  background-color: #b5253c; /* Se enciende con tu rojo claro */
+  color: #ffffff; 
+  box-shadow: 0 10px 25px rgba(181, 37, 60, 0.4); /* La sombra se vuelve rojiza y amplia */
 }
