@@ -103,38 +103,38 @@
 
 /* El color y diseño de tu botón */
 .btn-cool {
-  padding: 14px;
-  /* Borde con tu color crema pero un poco más tenue */
+  display: inline-block; /* Aseguramos que las transformaciones funcionen */
+  padding: 14px 28px;
+  /* Borde crema suave */
   border: 2px solid rgba(250, 247, 244, 0.4); 
   cursor: pointer;
-  border-radius: 8px; /* Mantenemos bordes modernos */
+  border-radius: 8px; /* Bordes modernos */
   width: 100%;
   font-weight: 600;
-  color: rgba(250, 247, 244, 0.7); /* Texto crema pero suave, no tan brillante */
-  background-color: transparent;
+  /* Texto crema pálido (no tan brillante al inicio) */
+  color: rgba(250, 247, 244, 0.7); 
+  background-color: transparent; /* Fondo transparente */
   font-size: 1rem;
   letter-spacing: 0.05em;
-  /* Hacemos la transición un poquito más lenta para que sea "placentera" */
+  /* Transición suave y placentera */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  
- 
 }
 
 /* El efecto al pasar el mouse */
 .btn-cool:hover {
-  transform: translateY(-3px); /* Flota suavemente */
-  /* El borde se ilumina (crema puro) */
-  border-color: rgba(250, 247, 244, 1); 
-  /* El texto se ilumina (crema puro brillante) */
-  color: #faf7f4; 
+  transform: translateY(-3px); /* Flota ligeramente */
   
-  /* AQUÍ ESTÁ EL TRUCO: Un fondo sutil, esmerilado y luminoso */
-  /* No es blanco sólido, es una capa de luz blanca con muy baja opacidad */
-  background-color: rgba(255, 255, 255, 0.1); 
-  /* Efecto cristal en el hover */
-  backdrop-filter: blur(4px); 
-
-  /* Sombra más suave y colorida */
-  box-shadow: 0 10px 25px rgba(250, 247, 244, 0.15);
+  /* CAMBIO CLAVE: Un relleno sólido que se diferencia del fondo.
+     Usamos el rojo más claro de tu paleta. */
+  background-color: #b5253c; /* Tu variable --granate-l */
+  
+  /* El borde se vuelve crema puro para definir la caja */
+  border-color: #faf7f4; /* Tu variable --crema */
+  
+  /* El texto se vuelve crema puro para contrastar con el fondo sólido */
+  color: #faf7f4; /* Tu variable --crema */
+  
+  /* Sombra más amplia y con un tono granate claro */
+  box-shadow: 0 12px 30px rgba(181, 37, 60, 0.4);
 }
