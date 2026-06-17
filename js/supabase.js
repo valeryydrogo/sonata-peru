@@ -1,5 +1,5 @@
 // Importar Supabase
-import { createClient } from 'https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.esm.js';
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 // Tus claves de conexión
 const SUPABASE_URL = "https://jxgzksmhvkhypzdjwwww.supabase.co";
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       const datos = {
-        nombre: document.getElementById('m-nombre').value.trim(),
-        correo: document.getElementById('m-correo').value.trim(),
-        telefono: document.getElementById('m-telefono').value.trim() || null,
-        curso: document.getElementById('m-curso').value,
-        nivel: document.getElementById('m-nivel').value || null,
-        mensaje: document.getElementById('m-mensaje').value.trim() || null,
+        nombre: document.getElementById('nombre').value.trim(),
+        correo: document.getElementById('correo').value.trim(),
+        telefono: document.getElementById('telefono').value.trim() || null,
+        curso: document.getElementById('curso').value,
+        nivel: document.getElementById('nivel').value || null,
+        mensaje: document.getElementById('mensaje').value.trim() || null,
       };
 
       btnSubmit.disabled = true;
