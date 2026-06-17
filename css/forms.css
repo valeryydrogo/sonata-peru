@@ -103,20 +103,20 @@
 
 /* El color y diseño de tu botón */
 .btn-cool {
-  display: inline-block; /* Aseguramos que las transformaciones funcionen */
+  display: inline-block; 
   padding: 14px 28px;
-  /* Borde crema suave */
-  border: 2px solid rgba(250, 247, 244, 0.4); 
+  /* Borde crema 100% visible y sólido */
+  border: 2px solid #faf7f4; 
   cursor: pointer;
-  border-radius: 8px; /* Bordes modernos */
+  border-radius: 8px; 
   width: 100%;
   font-weight: 600;
-  /* Texto crema pálido (no tan brillante al inicio) */
-  color: rgba(250, 247, 244, 0.7); 
-  background-color: transparent; /* Fondo transparente */
+  /* Texto crema 100% visible */
+  color: #faf7f4; 
+  /* Un fondo apenas visible para que no parezca vacío */
+  background-color: rgba(250, 247, 244, 0.08); 
   font-size: 1rem;
   letter-spacing: 0.05em;
-  /* Transición suave y placentera */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
