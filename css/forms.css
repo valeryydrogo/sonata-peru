@@ -103,26 +103,38 @@
 
 /* El color y diseño de tu botón */
 .btn-cool {
-  padding: 14px; 
-  border: none; 
-  cursor: pointer; 
-  border-radius: 4px; 
-  width: 100%; 
-  font-weight: 600; 
-  color: #faf7f4; /* Tu color granate */
-  background-color: transparent; /* Tu fondo blanco */
-  font-size: 1rem; 
+  padding: 14px;
+  /* Borde con tu color crema pero un poco más tenue */
+  border: 2px solid rgba(250, 247, 244, 0.4); 
+  cursor: pointer;
+  border-radius: 8px; /* Mantenemos bordes modernos */
+  width: 100%;
+  font-weight: 600;
+  color: rgba(250, 247, 244, 0.7); /* Texto crema pero suave, no tan brillante */
+  background-color: transparent;
+  font-size: 1rem;
   letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  /* Hacemos la transición un poquito más lenta para que sea "placentera" */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   
  
 }
 
 /* El efecto al pasar el mouse */
 .btn-cool:hover {
-  background-color: #faf7f4; /* Se rellena de crema al pasar el mouse */
-  color: #8b1a2b; /* El texto se vuelve granate */
-  transform: translateY(-2px); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
-  border-color: #faf7f4;
+  transform: translateY(-3px); /* Flota suavemente */
+  /* El borde se ilumina (crema puro) */
+  border-color: rgba(250, 247, 244, 1); 
+  /* El texto se ilumina (crema puro brillante) */
+  color: #faf7f4; 
+  
+  /* AQUÍ ESTÁ EL TRUCO: Un fondo sutil, esmerilado y luminoso */
+  /* No es blanco sólido, es una capa de luz blanca con muy baja opacidad */
+  background-color: rgba(255, 255, 255, 0.1); 
+  /* Efecto cristal en el hover */
+  backdrop-filter: blur(4px); 
+
+  /* Sombra más suave y colorida */
+  box-shadow: 0 10px 25px rgba(250, 247, 244, 0.15);
 }
