@@ -351,8 +351,8 @@ section { padding: 96px 8%; }
   overflow: hidden; 
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  }
 }
-
 
 /* ═══════════════════════════════════════════
    LA CLAVE: EL OVERLAY (SUPERPOSICIÓN) CORREGIDO
