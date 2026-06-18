@@ -320,103 +320,84 @@ section { padding: 96px 8%; }
 #cursos { background: var(--blanco); }
  
 .courses-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 52px; }
-/* ═══════════════════════════════════════════
-   CONTENEDOR PRINCIPAL (GRID RECTILÍNEO)
-═══════════════════════════════════════════ */
+/* ==========================================================================
+   REJILLA Y TARJETA DE CURSOS - PARCHE DEFINITIVO
+   ========================================================================== */
+
+/* 1. Fuerza las 3 columnas iguales */
 .courses-grid {
-  display: grid;
-  /* Fuerza exactamente 3 columnas del mismo tamaño en escritorio */
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 24px; /* Separación idéntica horizontal y vertical */
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; 
+  gap: 24px !important; 
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 40px 20px !important;
 }
 
-/* ═══════════════════════════════════════════
-   COMPONENTE TARJETA (INDIVIDUAL)
-═══════════════════════════════════════════ */
-/* ═══════════════════════════════════════════
-   COMPONENTE TARJETA (NUEVO DISEÑO A SANGRE CORREGIDO)
-═══════════════════════════════════════════ */
+/* 2. Tarjeta Base (Fondo de respaldo si la red falla) */
 .course-card {
-  .course-card {
-  background-color: #8b1a2b; 
-  border-radius: 8px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 380px; /* <--- ESTA LÍNEA ES LA MAGIA PARA IGUALAR ALTURAS */
-  overflow: hidden; 
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  }
+  border-radius: 8px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 380px !important; 
+  overflow: hidden !important; 
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important; 
+  background-color: #8b1a2b !important; 
 }
 
-/* ═══════════════════════════════════════════
-   LA CLAVE: EL OVERLAY (SUPERPOSICIÓN) CORREGIDO
-═══════════════════════════════════════════ */
-/* Esto asegura que la capa roja cubra toda la foto siempre */
+.course-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2) !important; 
+}
+
+/* 3. El filtro rojo transparente sobre las fotos */
 .course-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0; /* Alternativa más segura a inset: 0 */
-  background-color: rgba(139, 26, 43, 0.65); 
-  z-index: 1; 
-  transition: background-color 0.4s ease;
-  pointer-events: none; /* Asegura que el click pase a los botones */
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; 
+  background-color: rgba(139, 26, 43, 0.7) !important; 
+  z-index: 1 !important; 
+  transition: background-color 0.4s ease !important;
+  pointer-events: none !important; 
 }
 
 .course-card:hover::after {
-  background-color: rgba(139, 26, 43, 0.75); 
+  background-color: rgba(139, 26, 43, 0.8) !important; 
 }
 
-/* ═══════════════════════════════════════════
-   CONTENEDOR DEL TEXTO (CORRECCIÓN DE ALTURAS)
-═══════════════════════════════════════════ */
+/* 4. Contenedor del texto (por encima del filtro) */
 .course-card-content {
-  padding: 40px 28px 36px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Esto hace que el contenedor de texto estire la tarjeta completa */
-  position: relative;
-  z-index: 2; /* Mantiene el texto por encima del color rojo */
+  padding: 40px 28px 36px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important; 
+  position: relative !important;
+  z-index: 2 !important; 
 }
 
-/* ═══════════════════════════════════════════
-   DEFINICIÓN DE IMÁGENES DE FONDO (ENLACES DE INTERNET)
-═══════════════════════════════════════════ */
+/* 5. IMÁGENES DE INTERNET FORZADAS */
 .card-piano { 
-  background-image: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&auto=format&fit=crop'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&auto=format&fit=crop') !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
 }
 .card-guitarra { 
-  background-image: url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop') !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
 }
-.card-canto { 
-  background-image: url('https://images.unsplash.com/photo-1516280440502-62f1617bd84b?q=80&w=800&auto=format&fit=crop'); 
-  background-size: cover; 
-  background-position: center; 
-}
-
 .card-bateria { 
-  background-image: url('https://images.pexels.com/photos/1756086/pexels-photo-1756086.jpeg?auto=compress&cs=tinysrgb&w=800'); 
-  background-size: cover; 
-  background-position: center; 
-}
-.card-violin { 
-  background-image: url('https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=800&auto=format&fit=crop'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url('https://images.pexels.com/photos/1756086/pexels-photo-1756086.jpeg?auto=compress&cs=tinysrgb&w=800') !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
 }
 .card-consulta { 
-  background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop') !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
 }
 
 /* ═══════════════════════════════════════════
