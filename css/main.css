@@ -390,7 +390,7 @@ section { padding: 96px 8%; }
   background-position: center !important; 
 }
 .card-bateria { 
-  background-image: url('https://images.unsplash.com/photo-1556449895-a33c9fac3300?q=80&w=800&auto=format&fit=crop') !important; 
+  background-image: url('../assets/bateria.jpg') !important;
   background-size: cover !important; 
   background-position: center !important; 
 }
