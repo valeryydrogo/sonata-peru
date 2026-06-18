@@ -389,8 +389,23 @@ section { padding: 96px 8%; }
   background-size: cover !important; 
   background-position: center !important; 
 }
+.card-guitarra_electrica { 
+  background-image: url('../assets/guitarra_electrica.jpg') !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
+}
 .card-bateria { 
   background-image: url('../assets/bateria.jpg') !important;
+  background-size: cover !important; 
+  background-position: center !important; 
+}
+.card-violin { 
+  background-image: url('../assets/violin.jpg') !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
+}
+.card-canto { 
+  background-image: url('../assets/canto.jpg') !important; 
   background-size: cover !important; 
   background-position: center !important; 
 }
@@ -399,6 +414,7 @@ section { padding: 96px 8%; }
   background-size: cover !important; 
   background-position: center !important; 
 }
+
 
 /* ═══════════════════════════════════════════
    ELEMENTOS INTERNOS (AJUSTADOS PARA FONDO OSCURO)
