@@ -337,45 +337,126 @@ section { padding: 96px 8%; }
 /* ═══════════════════════════════════════════
    COMPONENTE TARJETA (INDIVIDUAL)
 ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   COMPONENTE TARJETA (NUEVO DISEÑO A SANGRE)
+═══════════════════════════════════════════ */
 .course-card {
-  background: #fefefe;
-  border: 1px solid rgba(139, 26, 43, 0.12); /* Contorno sutil granate */
+  /* Fondo blanco por defecto, se sobrescribirá por clase específica */
+  background-color: #fefefe; 
   border-radius: 8px;
-  padding: 36px 28px;
+  
+  /* IMPORTANTE: position relative para posicionar elementos dentro */
   position: relative;
   
-  /* Uso de flexbox vertical para estirar las tarjetas al mismo tamaño */
+  /* Uso de flexbox vertical para estirar las tarjetas */
   display: flex;
   flex-direction: column;
   height: 100%; 
   
+  /* Oculta lo que sobresalga de la imagen de fondo */
+  overflow: hidden; 
+  
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+  /* Sombra base para dar profundidad */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Efecto interactivo de elevación sutil */
+/* Efecto de elevación al pasar el mouse */
 .course-card:hover {
   transform: translateY(-6px);
-  border-color: #8b1a2b; /* Se pinta de tu granate de marca */
-  box-shadow: 0 12px 30px rgba(139, 26, 43, 0.08); /* Proyección suave */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2); 
 }
 
 /* ═══════════════════════════════════════════
-   ELEMENTOS INTERNOS DE LA TARJETA
+   LA CLAVE: EL OVERLAY (SUPERPOSICIÓN)
 ═══════════════════════════════════════════ */
+/* Creamos una capa invisible por defecto sobre la imagen */
+.course-card::after {
+  content: '';
+  position: absolute;
+  inset: 0; /* Cubre toda la tarjeta */
+  /* Tu color granate semitransparente (0.65 de opacidad) */
+  background-color: rgba(139, 26, 43, 0.65); 
+  z-index: 1; /* Se sitúa sobre la imagen pero bajo el texto */
+  transition: background-color 0.4s ease;
+}
+
+/* En hover, el overlay se intensifica ligeramente */
+.course-card:hover::after {
+  background-color: rgba(139, 26, 43, 0.75); 
+}
+
+/* ═══════════════════════════════════════════
+   DEFINICIÓN DE IMÁGENES DE FONDO
+═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   DEFINICIÓN DE IMÁGENES DE FONDO (ENLACES DE INTERNET)
+═══════════════════════════════════════════ */
+.card-piano { 
+  background-image: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&auto=format&fit=crop'); 
+  background-size: cover; 
+  background-position: center; 
+}
+.card-guitarra { 
+  background-image: url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop'); 
+  background-size: cover; 
+  background-position: center; 
+}
+.card-canto { 
+  background-image: url('https://images.unsplash.com/photo-1516280440502-62f1617bd84b?q=80&w=800&auto=format&fit=crop'); 
+  background-size: cover; 
+  background-position: center; 
+}
+.card-teoria { 
+  background-image: url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=800&auto=format&fit=crop'); 
+  background-size: cover; 
+  background-position: center; 
+}
+.card-violin { 
+  background-image: url('https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=800&auto=format&fit=crop'); 
+  background-size: cover; 
+  background-position: center; 
+}
+.card-consulta { 
+  background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+/* ═══════════════════════════════════════════
+   ELEMENTOS INTERNOS (AJUSTADOS PARA FONDO OSCURO)
+═══════════════════════════════════════════ */
+/* Aseguramos que todo el contenido esté por encima del overlay */
+.card-icon, .card-eyebrow, .card-title, .card-text, .card-tags {
+  position: relative;
+  z-index: 2; 
+}
+
+/* Pad superior para no pisar el icono, pad inferior para respirar */
+.course-card-content {
+  padding: 40px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .card-icon {
   position: absolute;
   top: 28px;
   right: 28px;
   font-size: 1.4rem;
-  color: #8b1a2b;
-  opacity: 0.15; /* Sutil marca de agua musical */
+  /* Color crema suave para el icono */
+  color: #faf7f4; 
+  opacity: 0.6; /* Sutil marca de agua */
 }
 
 .card-eyebrow {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #8b1a2b;
+  /* Color crema brillante */
+  color: #faf7f4; 
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -383,34 +464,33 @@ section { padding: 96px 8%; }
 .card-title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #1a1818;
+  /* Texto totalmente blanco/crema para máximo contraste */
+  color: #ffffff; 
   margin-bottom: 14px;
 }
 
 .card-text {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #555555;
+  /* Crema suave para el texto largo */
+  color: #faf7f4; 
   margin-bottom: 24px;
-  
-  /* ESTA PROPIEDAD ES LA CLAVE: 
-     Empuja las etiquetas hacia el fondo de la tarjeta automáticamente,
-     haciendo que los tags queden perfectamente alineados abajo */
-  flex-grow: 1; 
+  flex-grow: 1; /* Empuja las etiquetas abajo */
 }
 
 .card-tags {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap; /* Si hay muchas etiquetas, bajan de forma ordenada */
+  flex-wrap: wrap;
 }
 
 .pill-tag {
   font-size: 0.75rem;
   padding: 4px 12px;
-  border: 1px solid rgba(139, 26, 43, 0.2);
+  border: 1px solid rgba(250, 247, 244, 0.4);
   border-radius: 4px;
-  color: #8b1a2b;
+  /* Texto crema */
+  color: #faf7f4; 
   background-color: transparent;
 }
 
