@@ -338,58 +338,50 @@ section { padding: 96px 8%; }
    COMPONENTE TARJETA (INDIVIDUAL)
 ═══════════════════════════════════════════ */
 /* ═══════════════════════════════════════════
-   COMPONENTE TARJETA (NUEVO DISEÑO A SANGRE)
+   COMPONENTE TARJETA (NUEVO DISEÑO A SANGRE CORREGIDO)
 ═══════════════════════════════════════════ */
 .course-card {
-  /* Fondo blanco por defecto, se sobrescribirá por clase específica */
-  background-color: #fefefe; 
+  background-color: #8b1a2b; /* Color base por si falla la imagen */
   border-radius: 8px;
-  
-  /* IMPORTANTE: position relative para posicionar elementos dentro */
   position: relative;
-  
-  /* Uso de flexbox vertical para estirar las tarjetas */
   display: flex;
   flex-direction: column;
-  height: 100%; 
-  
-  /* Oculta lo que sobresalga de la imagen de fondo */
+  /* Eliminamos el height: 100% de aquí, lo manejará el grid */
   overflow: hidden; 
-  
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  
-  /* Sombra base para dar profundidad */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Efecto de elevación al pasar el mouse */
-.course-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2); 
-}
-
 /* ═══════════════════════════════════════════
-   LA CLAVE: EL OVERLAY (SUPERPOSICIÓN)
+   LA CLAVE: EL OVERLAY (SUPERPOSICIÓN) CORREGIDO
 ═══════════════════════════════════════════ */
-/* Creamos una capa invisible por defecto sobre la imagen */
+/* Esto asegura que la capa roja cubra toda la foto siempre */
 .course-card::after {
   content: '';
   position: absolute;
-  inset: 0; /* Cubre toda la tarjeta */
-  /* Tu color granate semitransparente (0.65 de opacidad) */
+  top: 0; left: 0; right: 0; bottom: 0; /* Alternativa más segura a inset: 0 */
   background-color: rgba(139, 26, 43, 0.65); 
-  z-index: 1; /* Se sitúa sobre la imagen pero bajo el texto */
+  z-index: 1; 
   transition: background-color 0.4s ease;
+  pointer-events: none; /* Asegura que el click pase a los botones */
 }
 
-/* En hover, el overlay se intensifica ligeramente */
 .course-card:hover::after {
   background-color: rgba(139, 26, 43, 0.75); 
 }
 
 /* ═══════════════════════════════════════════
-   DEFINICIÓN DE IMÁGENES DE FONDO
+   CONTENEDOR DEL TEXTO (CORRECCIÓN DE ALTURAS)
 ═══════════════════════════════════════════ */
+.course-card-content {
+  padding: 40px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Esto hace que el contenedor de texto estire la tarjeta completa */
+  position: relative;
+  z-index: 2; /* Mantiene el texto por encima del color rojo */
+}
+
 /* ═══════════════════════════════════════════
    DEFINICIÓN DE IMÁGENES DE FONDO (ENLACES DE INTERNET)
 ═══════════════════════════════════════════ */
