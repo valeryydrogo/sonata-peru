@@ -406,6 +406,27 @@ section { padding: 96px 8%; }
   z-index: 2 !important; 
 }
 
+/* =========================================
+   CONTENEDOR OSCURO PARA TEXTO DE TARJETAS
+========================================= */
+.card-text-backdrop {
+  background-color: rgba(45, 8, 14, 0.75) !important; /* Granate súper oscuro y transparente */
+  padding: 24px !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(6px) !important; /* Efecto cristal minimalista */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Borde de luz súper fino */
+  margin-bottom: auto !important; /* Empuja los botones de abajo hacia el fondo */
+}
+
+/* Ajuste rápido para que el texto respire bien dentro de su nueva caja */
+.card-text-backdrop .card-title {
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+}
+.card-text-backdrop .card-text {
+  margin: 0 !important;
+}
+
 /* 5. IMÁGENES DE INTERNET FORZADAS */
 .card-piano { 
   background-image: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&auto=format&fit=crop') !important; 
