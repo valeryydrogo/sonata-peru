@@ -319,6 +319,118 @@ section { padding: 96px 8%; }
 ═══════════════════════════════════════════ */
 #cursos { background: var(--blanco); }
  
+.courses-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 52px; }
+/* ═══════════════════════════════════════════
+   CONTENEDOR PRINCIPAL (GRID RECTILÍNEO)
+═══════════════════════════════════════════ */
+.courses-grid {
+  display: grid;
+  /* Fuerza exactamente 3 columnas del mismo tamaño en escritorio */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px; /* Separación idéntica horizontal y vertical */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ═══════════════════════════════════════════
+   COMPONENTE TARJETA (INDIVIDUAL)
+═══════════════════════════════════════════ */
+.course-card {
+  background: #fefefe;
+  border: 1px solid rgba(139, 26, 43, 0.12); /* Contorno sutil granate */
+  border-radius: 8px;
+  padding: 36px 28px;
+  position: relative;
+  
+  /* Uso de flexbox vertical para estirar las tarjetas al mismo tamaño */
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Efecto interactivo de elevación sutil */
+.course-card:hover {
+  transform: translateY(-6px);
+  border-color: #8b1a2b; /* Se pinta de tu granate de marca */
+  box-shadow: 0 12px 30px rgba(139, 26, 43, 0.08); /* Proyección suave */
+}
+
+/* ═══════════════════════════════════════════
+   ELEMENTOS INTERNOS DE LA TARJETA
+═══════════════════════════════════════════ */
+.card-icon {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  font-size: 1.4rem;
+  color: #8b1a2b;
+  opacity: 0.15; /* Sutil marca de agua musical */
+}
+
+.card-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8b1a2b;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1818;
+  margin-bottom: 14px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 24px;
+  
+  /* ESTA PROPIEDAD ES LA CLAVE: 
+     Empuja las etiquetas hacia el fondo de la tarjeta automáticamente,
+     haciendo que los tags queden perfectamente alineados abajo */
+  flex-grow: 1; 
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap; /* Si hay muchas etiquetas, bajan de forma ordenada */
+}
+
+.pill-tag {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border: 1px solid rgba(139, 26, 43, 0.2);
+  border-radius: 4px;
+  color: #8b1a2b;
+  background-color: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE DESIGN (DISEÑO ADAPTABLE)
+═══════════════════════════════════════════ */
+/* En tablets o monitores medianos, pasa a 2 por fila */
+@media (max-width: 992px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* En teléfonos móviles, pasa a 1 por fila */
+@media (max-width: 600px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
+} 
 
 
 /* ═══════════════════════════════════════════
