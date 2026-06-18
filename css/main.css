@@ -408,8 +408,9 @@ section { padding: 96px 8%; }
   background-size: cover; 
   background-position: center; 
 }
-.card-teoria { 
-  background-image: url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=800&auto=format&fit=crop'); 
+
+.card-bateria { 
+  background-image: url('https://images.unsplash.com/photo-1543443374-b6fe10a7ab7b?q=80&w=800&auto=format&fit=crop'); 
   background-size: cover; 
   background-position: center; 
 }
