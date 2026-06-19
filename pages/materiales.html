@@ -28,23 +28,29 @@
 </nav>
 
 <section class="materiales-instrumento" aria-label="Lista de materiales por instrumento">
- 
-  <div class="eyebrow">
-    <div class="eyebrow-line"></div>
-    <span class="eyebrow-text">Prepárate</span>
+  <div class="materiales-grid">
+    
+    <div class="materiales-content">
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Prepárate</span>
+      </div>
+      <p class="section-title">Lista de materiales, por instrumento</p>
+      
+      <div class="chip-container">
+        <button id="btnScrollLeft" class="scroll-arrow" aria-label="Desplazar a la izquierda">←</button>
+        <div class="chip-row" id="chipRow" role="tablist"></div>
+        <button id="btnScrollRight" class="scroll-arrow" aria-label="Desplazar a la derecha">→</button>
+      </div>
+      
+      <div id="cardHost"></div>
+    </div>
+
+    <div class="materiales-image-col">
+      <img id="instrumentImage" src="../assets/piano.jpg" alt="Imagen del instrumento">
+    </div>
+    
   </div>
-  <p class="section-title">Lista de materiales, por instrumento</p>
- 
-  <div class="chip-container">
-    <button id="btnScrollLeft" class="scroll-arrow" aria-label="Desplazar a la izquierda">←</button>
-  
-    <div class="chip-row" id="chipRow" role="tablist"></div>
-  
-    <button id="btnScrollRight" class="scroll-arrow" aria-label="Desplazar a la derecha">→</button>
-  </div>
- 
-  <div id="cardHost"></div>
- 
 </section>
 
 <footer>
