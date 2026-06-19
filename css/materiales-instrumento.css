@@ -137,50 +137,54 @@
 }
 
 /* =========================================================
-   ESTILOS: FONDO MÍSTICO SOLO PARA LA SECCIÓN MATERIALES
+   ESTILOS: FONDO MÍSTICO SOLO PARA EL CUERPO DE MATERIALES
 =========================================================== */
 
-/* Aplicamos el fondo únicamente al contenedor principal de esta sección */
+/* Aplicamos el fondo SOLO al contenedor que está entre el nav y el footer */
 .materiales-instrumento {
     position: relative;
-    background-image: 
-        linear-gradient(rgba(90, 27, 38, 0.92), rgba(90, 27, 38, 0.92)), /* Overlay Guinda Oscuro */
-        url('../assets/fondoatras_cursos.jpg'); /* ¡Asegúrate de poner el nombre de tu foto aquí! */
+    background-image:
+        linear-gradient(rgba(90, 27, 38, 0.92), rgba(90, 27, 38, 0.92)), /* Overlay Guinda Profundo */
+        url('../assets/fondoatras_cursos.jpg'); /* Tu imagen de violines */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto parallax elegante */
+    background-attachment: fixed; /* Efecto Parallax */
     
-    /* Obligamos a que el texto base sea crema para que resalte sobre lo oscuro */
+    /* Le damos un alto mínimo y buen espacio interno */
+    min-height: calc(100vh - 80px); /* Ocupa el alto de la pantalla menos la altura del nav */
+    padding: 80px 5%; 
+    
+    /* Cambiamos el color base a Crema para contraste */
     color: var(--crema, #F0EAE3);
 }
 
-/* --- Aseguramos que los títulos y textos específicos también se vuelvan crema --- */
+/* =========================================================
+   AJUSTES GENERALES PARA TEXTOS SOBRE FONDO OSCURO
+=========================================================== */
+
+/* Forzamos que los textos específicos de esta sección sean crema. */
 .materiales-instrumento .section-title,
 .materiales-instrumento .eyebrow-text,
 .materiales-instrumento p,
 .materiales-instrumento h2,
 .materiales-instrumento h3 {
-    color: var(--crema, #F0EAE3);
+    color: var(--crema, #F0EAE3) !important;
 }
 
-/* Si tu línea de "eyebrow" (la rayita antes de "Prepárate") era de otro color, 
-   la volvemos crema para que haga juego */
+/* Ajuste de la línea eyebrow a crema */
 .materiales-instrumento .eyebrow-line {
-    background-color: var(--crema, #F0EAE3);
+    background-color: var(--crema, #F0EAE3) !important;
 }
 
-/* =========================================================
-   EFECTO CRISTAL PARA LAS TARJETAS DE MATERIALES (JS)
-=========================================================== */
-/* Como las tarjetas se generan con JavaScript en #cardHost, 
-   les damos este estilo para que resalten hermoso sobre el fondo */
-#cardHost > div, 
-.tarjeta-material { /* Agrega aquí la clase real que tengan tus tarjetas generadas */
-    background-color: rgba(255, 255, 255, 0.08); /* Fondo blanco casi transparente */
-    border: 1px solid rgba(240, 234, 227, 0.15); /* Borde crema súper sutil */
-    border-radius: 12px;
-    backdrop-filter: blur(5px); /* Desenfoca el fondo guinda detrás de la tarjeta */
+/* Ajuste para las flechas del slider */
+.materiales-instrumento .scroll-arrow {
     color: var(--crema, #F0EAE3);
+    border-color: rgba(240, 234, 227, 0.3);
+    background: transparent;
+}
+
+.materiales-instrumento .scroll-arrow:hover {
+    background-color: rgba(240, 234, 227, 0.1);
 }
 
 /* =========================================================
@@ -188,6 +192,7 @@
 =========================================================== */
 @media (max-width: 768px) {
     .materiales-instrumento {
-        background-attachment: scroll; /* Desactivamos el parallax en móvil para que rinda mejor */
+        background-attachment: scroll; /* Desactivamos parallax en móvil */
+        padding: 40px 5%;
     }
 }
