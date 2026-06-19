@@ -564,30 +564,6 @@ section { padding: 96px 8%; }
 } 
 
 
-/* ═══════════════════════════════════════════
-   MATERIALES
-═══════════════════════════════════════════ */
-#materiales { background: var(--crema-2); }
- 
-.mat-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
- 
-.mat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
- 
-.mat-card { background: var(--blanco); border: 0.5px solid var(--borde); border-radius: 6px; padding: 22px 22px 26px; position: relative; overflow: hidden; }
-.mat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--granate); }
- 
-.mat-level { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--granate); margin-bottom: 8px; }
-.mat-title { font-family: var(--display); font-size: 1.1rem; font-weight: 600; margin-bottom: 14px; color: var(--negro); }
-.mat-items { list-style: none; }
-.mat-item { display: flex; align-items: baseline; gap: 8px; padding: 6px 0; border-bottom: 0.5px solid var(--borde); font-size: 0.82rem; color: var(--negro-2); }
-.mat-item:last-child { border-bottom: none; }
-.mat-item::before { content: '–'; color: var(--granate); flex-shrink: 0; font-weight: 500; }
- 
-.mat-cta-card { background: var(--granate); border-radius: 6px; padding: 22px 22px 26px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; min-height: 200px; }
-.mat-cta-card .mc-clef { font-family: var(--display); font-size: 4rem; color: rgba(254,254,254,0.2); line-height: 1; }
-.mat-cta-card p { font-size: 0.88rem; color: rgba(254,254,254,0.75); line-height: 1.6; }
-.mat-cta-card a { font-size: 0.8rem; font-weight: 500; color: var(--blanco); letter-spacing: 0.08em; border-bottom: 0.5px solid rgba(254,254,254,0.4); padding-bottom: 1px; transition: border-color 0.2s; }
-.mat-cta-card a:hover { border-color: var(--blanco); }
 
 /* ═══════════════════════════════════════════
    TESTIMONIOS
