@@ -369,43 +369,78 @@ section { padding: 96px 8%; }
 /* EFECTO HOVER: Lo que lo hace llamativo */
 .valor-item:hover {
     background-color: rgba(255, 255, 255, 0.6); /* Fondo sutil al pasar el mouse */
-    border-left: 3px solid var(--vino); /* Aparece la línea color vino */
+    border-left: 3px solid var(--vino, #5A1B26); /* Aparece la línea color guinda */
     transform: translateX(10px); /* Se mueve un poquito a la derecha */
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 
-/* El Número Elegante (01, 02, 03) */
+/* EL NÚMERO ELEGANTE - AHORA SÍ ES GUINDA */
 .valor-numero {
     font-family: 'Playfair Display', serif; /* Tipografía elegante */
     font-size: 38px;
     font-weight: bold;
-    color: var(--vino);
-    opacity: 0.4; /* Medio transparente inicialmente */
+    color: var(--vino, #5A1B26); /* Tu color guinda directo */
+    opacity: 0.85; /* Lo subimos para que no se vea gris, sino un guinda sólido */
     line-height: 1;
     transition: all 0.3s ease;
 }
 
-/* Al pasar el mouse, el número cobra fuerza */
+/* Al pasar el mouse, el número cobra fuerza total */
 .valor-item:hover .valor-numero {
-    opacity: 1;
+    opacity: 1; /* Guinda al 100% al pasar el mouse */
     transform: scale(1.1);
 }
 
 /* El Título del valor */
 .valor-titulo {
-    font-family: 'Playfair Display', serif; /* Misma fuente elegante del título principal */
+    font-family: 'Playfair Display', serif; 
     font-size: 22px;
-    color: var(--vino);
+    color: var(--vino, #5A1B26);
     margin: 0 0 8px 0;
 }
 
 /* La Descripción */
 .valor-desc {
     font-family: sans-serif;
-    color: var(--gris-oscuro);
+    color: var(--gris-oscuro, #333333);
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
+}
+
+/* =========================================================
+   DISEÑO RESPONSIVE: LISTA DE VALORES ELEGANTE (Móvil)
+=========================================================== */
+@media (max-width: 768px) {
+    .valores-elegantes {
+        gap: 10px;
+        margin: 20px 0 0 0;
+    }
+
+    .valor-item {
+        padding: 15px 10px;
+        gap: 15px;
+        border-radius: 8px;
+    }
+
+    /* En celulares evitamos que se mueva hacia la derecha al tocarlo */
+    .valor-item:hover, 
+    .valor-item:active {
+        transform: none; 
+        background-color: rgba(255, 255, 255, 0.4); 
+    }
+
+    .valor-numero {
+        font-size: 32px; 
+    }
+
+    .valor-titulo {
+        font-size: 20px; 
+    }
+
+    .valor-desc {
+        font-size: 15px; 
+    }
 }
 
 /* ═══════════════════════════════════════════
