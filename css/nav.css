@@ -183,204 +183,137 @@ nav {
 =========================================================== */
 
 
-.seccion-aulas-completa {
-    padding: 100px 0; /* Más espacio vertical para que respire */
-    background-color: var(--crema-fondo);
+/* =========================================================
+   ESTILOS: SECCIÓN NUESTRAS AULAS (Grilla Simple Definitive)
+=========================================================== */
+
+.section-aulas {
+    padding: 100px 20px; /* Espacio vertical generoso */
+    background-color: var(--crema);
     display: flex;
     justify-content: center;
-    overflow: hidden; /* Evita scroll si las imágenes se superponen mucho */
 }
 
 .aulas-wrapper {
-    max-width: 1400px; /* MUCHO MÁS ANCHO que antes para PC */
-    width: 90%;
+    max-width: 1300px; /* Ancho generoso para PC pero sin exagerar */
+    width: 100%;
     display: flex;
     align-items: center; /* Alineación vertical central */
-    gap: 80px; /* Buen espacio entre texto y mosaico */
+    gap: 60px; /* Espacio limpio entre texto y fotos */
 }
 
 /* --- ESTILOS DE LA INFORMACIÓN (Izquierda) --- */
-.aulas-texto-content {
-    flex: 1; /* Ocupa el 50% en PC */
+.aulas-texto {
+    flex: 1; /* Ocupa el 45% del ancho en PC */
 }
 
-.subtitulo-vibrante {
+.subtitulo-vino {
     display: block;
-    color: var(--gris-texto); /* Un tono más suave para el subtítulo */
+    color: var(--vino);
     font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 15px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-.titulo-elegante {
-    color: var(--vino-caja); /* Título en el color principal */
-    font-size: 40px; /* Título grande y potente */
+.titulo-vino {
+    color: var(--vino);
+    font-size: 36px;
     font-family: 'Playfair Display', serif; /* O tu serif principal */
-    margin-bottom: 30px;
-    line-height: 1.1;
+    margin-bottom: 25px;
+    line-height: 1.2;
 }
 
-/* --- JUEGO DE COLORES EN LA DESCRIPCIÓN (Tu petición) --- */
-.descripcion-vibrante {
-    color: var(--gris-texto);
+/* --- JUEGO DE COLORES EN LA DESCRIPCIÓN --- */
+.aulas-descripcion {
+    color: var(--gris-oscuro);
     line-height: 1.8;
-    font-size: 18px; /* Un poco más de cuerpo al texto */
-    max-width: 550px; /* Límite de ancho para mejor legibilidad */
+    font-size: 16px;
 }
 
-/* 1. Destaque en Rojo Vino VIBRANTE (como links pero sin serlo) */
-.descripcion-vibrante .resaltado-vino {
-    color: var(--vino-texto);
+/* 1. Destaque en Rojo Vino */
+.aulas-descripcion .destaque-vino {
+    color: var(--vino);
     font-weight: 600;
 }
 
-/* 2. Resaltado 'Caja de Color' (Fondo Crema sobre Fondo Crema Ligeramente más claro, o viceversa) */
-.descripcion-vibrante .bg-vibrante-texto {
-    background-color: #E6DFD6; /* Un crema ligeramente más oscuro para que resalte */
-    color: var(--vino-caja);
+/* 2. Resaltado 'Caja de Color' */
+.aulas-descripcion .caja-crema {
+    background-color: rgba(255, 255, 255, 0.5); /* Crema muy suave */
+    color: var(--vino);
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: bold;
 }
 
-/* 3. Destaque Bold (Solo negrita para contraste) */
-.descripcion-vibrante .destaque-bold {
+/* 3. Destaque Bold */
+.aulas-descripcion .destaque-bold {
     font-weight: bold;
 }
 
-/* --- ESTILOS DEL MOSAICO MURAL PRO (Derecha) --- */
-.aulas-mural-pro {
-    flex: 1.2; /* Un poco más del 50% para que el mural tenga presencia visual */
+/* --- ESTILOS DE LA GRILLA DE AULAS (Derecha - Soluciona el espacio) --- */
+.aulas-grid {
+    flex: 1.3; /* Le damos más peso a la derecha para llenar el espacio vacío */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
-    position: relative; /* Clave para el posicionamiento absoluto */
-    height: 650px; /* ALTO TOTAL DEL MURAL en PC para dar presencia */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas */
+    gap: 20px; /* Espacio limpio entre fotos */
 }
 
 /* Tarjeta base de cada imagen */
 .aula-img {
+    height: 250px; /* Altura base para las fotos de arriba */
     background-size: cover;
     background-position: center;
-    border-radius: 16px; /* Bordes redondeados más suaves */
-    position: absolute; /* Para superposición asimétrica */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Sombra suave para efecto 3D */
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animación suave al hover */
-    overflow: hidden; /* Para contener la etiqueta */
+    border-radius: 12px; /* Bordes redondeados profesionales */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra muy sutil */
+    transition: transform 0.3s ease; /* Pequeño efecto al hover */
 }
 
-/* Pequeña etiqueta de texto dentro de la foto */
-.tag-aula-pro {
-    position: absolute;
-    bottom: -1px; /* Soluciona un error visual de 1px */
-    left: 0;
-    right: 0;
-    background-color: rgba(90, 27, 38, 0.85); /* Vino semi-transparente */
-    color: white;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    transform: translateY(100%); /* Escondida inicialmente */
-    transition: transform 0.4s ease;
-}
-
-/* Efecto Hover: Las fotos se hacen un poco más grandes y se ponen al frente */
+/* Efecto hover suave y simple, sin superposiciones locas */
 .aula-img:hover {
-    transform: scale(1.05) translateZ(20px) !important;
-    z-index: 10 !important; /* Se pone al frente */
-    box-shadow: 0 20px 50px rgba(90, 27, 38, 0.2); /* Sombra color vino al hover */
+    transform: translateY(-5px); /* Se levanta un poquito */
 }
 
-.aula-img:hover .tag-aula-pro {
-    transform: translateY(0); /* Muestra la etiqueta */
-}
-
-/* === Posicionamiento Superpuesto Asimétrico (Inspirado en Referencias) === */
-
-/* Aula 1: Piano (Fondo) */
-.aula-img-1 {
-    width: 420px; /* Imágenes más grandes en PC */
-    height: 320px;
-    top: 50px;
-    left: 0;
-    z-index: 1;
-}
-
-/* Aula 2: Guitarras (Medio) */
-.aula-img-2 {
-    width: 460px;
-    height: 360px;
-    top: 0;
-    right: 0;
-    z-index: 2;
-}
-
-/* Aula 3: Batería (Frente y Superpuesta) */
+/* Posicionamiento y tamaño de la foto de abajo (spans across columns) */
 .aula-img-3 {
-    width: 490px;
-    height: 390px;
-    bottom: 0;
-    left: 10%; /* Superpuesta sobre las otras dos de forma dinámica */
-    z-index: 3;
+    grid-column: span 2; /* Ocupa las dos columnas, llenando el ancho de la grilla */
+    height: 300px; /* Un poco más alta para tener presencia */
 }
 
 /* =========================================================
-   DISEÑO RESPONSIVE: SECCIÓN NUESTRAS AULAS (Móvil Pro)
+   DISEÑO RESPONSIVE: SECCIÓN NUESTRAS AULAS (Móvil)
 =========================================================== */
 @media (max-width: 768px) {
     .aulas-wrapper {
         flex-direction: column; /* Apilar texto arriba y fotos abajo */
-        gap: 50px;
+        gap: 40px;
         text-align: center;
     }
     
-    .seccion-aulas-completa {
-        padding: 60px 0;
+    .section-aulas {
+        padding: 60px 15px;
     }
 
-    .titulo-elegante {
-        font-size: 32px;
+    .titulo-vino {
+        font-size: 28px;
     }
     
-    .descripcion-vibrante {
-        font-size: 16px;
-        margin: 0 auto; /* Centrar texto */
-    }
-
-    /* Adaptar el mural a móvil Pro (Soluciona la falta de interacción y Watermarks) */
-    .aulas-mural-pro {
+    .aulas-grid {
         width: 100%;
-        height: auto; /* Altura automática en móvil */
-        display: flex; /* Usamos flex para apilar */
-        flex-direction: column;
-        align-items: center;
-        gap: 0px; /* Sin gap para superposición vertical */
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 15px;
     }
     
     .aula-img {
-        position: relative; /* Volvemos a flujo normal */
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 90% !important; /* Casi todo el ancho móvil */
-        max-width: 320px;
-        height: 220px !important;
-        margin-bottom: -30px; /* Superposición vertical para mantener el estilo artístico */
-        transform: none !important; /* Desactiva scale y translateZ en móvil */
+        height: 200px !important; /* Fotos un poco más bajas en móvil */
     }
     
-    /* El último no necesita margen negativo */
-    .aula-img:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Soluciona lo del móvil: Mostrar las etiquetas fijas (sin hover) */
-    .tag-aula-pro {
-        transform: translateY(0);
+    /* En móvil, la tercera foto no necesita spanear */
+    .aula-img-3 {
+        grid-column: span 1;
+        height: 200px !important;
     }
 }
