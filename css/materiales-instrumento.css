@@ -137,62 +137,71 @@
 }
 
 /* =========================================================
-   ESTILOS: FONDO MÍSTICO SOLO PARA EL CUERPO DE MATERIALES
+   ESTILOS: FONDO INMERSIVO (ESTILO MATRÍCULA) PARA MATERIALES
 =========================================================== */
 
-/* Aplicamos el fondo SOLO al contenedor que está entre el nav y el footer */
-.materiales-instrumento {
-    position: relative;
-    background-image:
+/* 1. Fondo para toda la página (Nav y Footer lo taparán en los extremos) */
+body {
+    background-image: 
         linear-gradient(rgba(90, 27, 38, 0.92), rgba(90, 27, 38, 0.92)), /* Overlay Guinda Profundo */
-        url('../assets/fondoatras_cursos.jpg'); /* Tu imagen de violines */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efecto Parallax */
-    
-    /* Le damos un alto mínimo y buen espacio interno */
-    min-height: calc(100vh - 80px); /* Ocupa el alto de la pantalla menos la altura del nav */
-    padding: 80px 5%; 
-    
-    /* Cambiamos el color base a Crema para contraste */
-    color: var(--crema, #F0EAE3);
+        url('../assets/violines-bg.jpg') !important; /* Tu foto de violines */
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+/* 2. ELIMINAMOS CUALQUIER FONDO O CAJA (Lo que me acabas de pedir) */
+.materiales-instrumento,
+.materiales-grid,
+.materiales-content {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important; /* Cero filtros, cero cajas */
 }
 
 /* =========================================================
-   AJUSTES GENERALES PARA TEXTOS SOBRE FONDO OSCURO
+   AJUSTES DE COLOR: TEXTOS A CREMA PARA QUE RESALTEN
 =========================================================== */
 
-/* Forzamos que los textos específicos de esta sección sean crema. */
-.materiales-instrumento .section-title,
-.materiales-instrumento .eyebrow-text,
-.materiales-instrumento p,
-.materiales-instrumento h2,
-.materiales-instrumento h3 {
+/* Todos los textos principales flotando sobre el fondo */
+.materiales-content .section-title,
+.materiales-content .eyebrow-text,
+.materiales-content p,
+.materiales-content h2,
+.materiales-content h3,
+#cardHost {
     color: var(--crema, #F0EAE3) !important;
 }
 
-/* Ajuste de la línea eyebrow a crema */
-.materiales-instrumento .eyebrow-line {
+/* La rayita pequeña de arriba */
+.eyebrow-line {
     background-color: var(--crema, #F0EAE3) !important;
 }
 
-/* Ajuste para las flechas del slider */
-.materiales-instrumento .scroll-arrow {
-    color: var(--crema, #F0EAE3);
-    border-color: rgba(240, 234, 227, 0.3);
-    background: transparent;
+/* Flechas de izquierda/derecha */
+.chip-container .scroll-arrow {
+    color: var(--crema, #F0EAE3) !important;
+    border-color: rgba(240, 234, 227, 0.3) !important;
+    background: transparent !important;
 }
 
-.materiales-instrumento .scroll-arrow:hover {
-    background-color: rgba(240, 234, 227, 0.1);
+.chip-container .scroll-arrow:hover {
+    background-color: rgba(240, 234, 227, 0.1) !important;
 }
 
 /* =========================================================
-   DISEÑO RESPONSIVE (Móvil)
+   DISEÑO RESPONSIVE: MATERIALES (Móvil)
 =========================================================== */
 @media (max-width: 768px) {
-    .materiales-instrumento {
-        background-attachment: scroll; /* Desactivamos parallax en móvil */
-        padding: 40px 5%;
+    body {
+        /* Apaga el parallax en celulares para evitar bugs visuales en Safari/iOS */
+        background-attachment: scroll !important;
+    }
+    
+    /* Le damos un poquito de respiro para que el contenido no pegue con los bordes de la pantalla */
+    .materiales-grid {
+        padding: 0 15px !important;
     }
 }
