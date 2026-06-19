@@ -135,3 +135,59 @@
   }
   .materiales-instrumento .instrument-name { font-size: 34px; }
 }
+
+/* =========================================================
+   ESTILOS: FONDO MÍSTICO SOLO PARA LA SECCIÓN MATERIALES
+=========================================================== */
+
+/* Aplicamos el fondo únicamente al contenedor principal de esta sección */
+.materiales-instrumento {
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(90, 27, 38, 0.92), rgba(90, 27, 38, 0.92)), /* Overlay Guinda Oscuro */
+        url('../assets/fondoatras_cursos.jpg'); /* ¡Asegúrate de poner el nombre de tu foto aquí! */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax elegante */
+    
+    /* Obligamos a que el texto base sea crema para que resalte sobre lo oscuro */
+    color: var(--crema, #F0EAE3);
+}
+
+/* --- Aseguramos que los títulos y textos específicos también se vuelvan crema --- */
+.materiales-instrumento .section-title,
+.materiales-instrumento .eyebrow-text,
+.materiales-instrumento p,
+.materiales-instrumento h2,
+.materiales-instrumento h3 {
+    color: var(--crema, #F0EAE3);
+}
+
+/* Si tu línea de "eyebrow" (la rayita antes de "Prepárate") era de otro color, 
+   la volvemos crema para que haga juego */
+.materiales-instrumento .eyebrow-line {
+    background-color: var(--crema, #F0EAE3);
+}
+
+/* =========================================================
+   EFECTO CRISTAL PARA LAS TARJETAS DE MATERIALES (JS)
+=========================================================== */
+/* Como las tarjetas se generan con JavaScript en #cardHost, 
+   les damos este estilo para que resalten hermoso sobre el fondo */
+#cardHost > div, 
+.tarjeta-material { /* Agrega aquí la clase real que tengan tus tarjetas generadas */
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo blanco casi transparente */
+    border: 1px solid rgba(240, 234, 227, 0.15); /* Borde crema súper sutil */
+    border-radius: 12px;
+    backdrop-filter: blur(5px); /* Desenfoca el fondo guinda detrás de la tarjeta */
+    color: var(--crema, #F0EAE3);
+}
+
+/* =========================================================
+   DISEÑO RESPONSIVE (Móvil)
+=========================================================== */
+@media (max-width: 768px) {
+    .materiales-instrumento {
+        background-attachment: scroll; /* Desactivamos el parallax en móvil para que rinda mejor */
+    }
+}
