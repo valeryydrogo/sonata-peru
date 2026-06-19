@@ -251,19 +251,19 @@ nav {
     font-weight: bold;
 }
 
-/* --- ESTILOS DEL MOSAICO MURAL (Derecha) --- */
-.aulas-mosaic-mural {
+/* --- ESTILOS DEL MOSAICO MURAL PRO (Derecha) --- */
+.aulas-mural-pro {
     flex: 1.2; /* Un poco más del 50% para que el mural tenga presencia visual */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     position: relative; /* Clave para el posicionamiento absoluto */
-    height: 550px; /* ALTO TOTAL DEL MURAL en PC */
+    height: 650px; /* ALTO TOTAL DEL MURAL en PC para dar presencia */
 }
 
 /* Tarjeta base de cada imagen */
-.mosaico-item {
+.aula-img {
     background-size: cover;
     background-position: center;
     border-radius: 16px; /* Bordes redondeados más suaves */
@@ -274,7 +274,7 @@ nav {
 }
 
 /* Pequeña etiqueta de texto dentro de la foto */
-.mosaico-tag {
+.tag-aula-pro {
     position: absolute;
     bottom: -1px; /* Soluciona un error visual de 1px */
     left: 0;
@@ -290,40 +290,40 @@ nav {
 }
 
 /* Efecto Hover: Las fotos se hacen un poco más grandes y se ponen al frente */
-.mosaico-item:hover {
+.aula-img:hover {
     transform: scale(1.05) translateZ(20px) !important;
     z-index: 10 !important; /* Se pone al frente */
     box-shadow: 0 20px 50px rgba(90, 27, 38, 0.2); /* Sombra color vino al hover */
 }
 
-.mosaico-item:hover .mosaico-tag {
+.aula-img:hover .tag-aula-pro {
     transform: translateY(0); /* Muestra la etiqueta */
 }
 
 /* === Posicionamiento Superpuesto Asimétrico (Inspirado en Referencias) === */
 
 /* Aula 1: Piano (Fondo) */
-.aula-1 {
-    width: 380px; /* Imágenes más grandes en PC */
-    height: 280px;
+.aula-img-1 {
+    width: 420px; /* Imágenes más grandes en PC */
+    height: 320px;
     top: 50px;
     left: 0;
     z-index: 1;
 }
 
 /* Aula 2: Guitarras (Medio) */
-.aula-2 {
-    width: 420px;
-    height: 320px;
+.aula-img-2 {
+    width: 460px;
+    height: 360px;
     top: 0;
     right: 0;
     z-index: 2;
 }
 
 /* Aula 3: Batería (Frente y Superpuesta) */
-.aula-3 {
-    width: 450px;
-    height: 350px;
+.aula-img-3 {
+    width: 490px;
+    height: 390px;
     bottom: 0;
     left: 10%; /* Superpuesta sobre las otras dos de forma dinámica */
     z-index: 3;
@@ -352,8 +352,8 @@ nav {
         margin: 0 auto; /* Centrar texto */
     }
 
-    /* Adaptar el mural a móvil Pro */
-    .aulas-mosaic-mural {
+    /* Adaptar el mural a móvil Pro (Soluciona la falta de interacción y Watermarks) */
+    .aulas-mural-pro {
         width: 100%;
         height: auto; /* Altura automática en móvil */
         display: flex; /* Usamos flex para apilar */
@@ -362,7 +362,7 @@ nav {
         gap: 0px; /* Sin gap para superposición vertical */
     }
     
-    .mosaico-item {
+    .aula-img {
         position: relative; /* Volvemos a flujo normal */
         top: 0 !important;
         left: 0 !important;
@@ -371,15 +371,16 @@ nav {
         max-width: 320px;
         height: 220px !important;
         margin-bottom: -30px; /* Superposición vertical para mantener el estilo artístico */
+        transform: none !important; /* Desactiva scale y translateZ en móvil */
     }
     
     /* El último no necesita margen negativo */
-    .mosaico-item:last-child {
+    .aula-img:last-child {
         margin-bottom: 0;
     }
 
-    /* Mostrar las etiquetas fijas en móvil (sin hover) */
-    .mosaico-tag {
+    /* Soluciona lo del móvil: Mostrar las etiquetas fijas (sin hover) */
+    .tag-aula-pro {
         transform: translateY(0);
     }
 }
