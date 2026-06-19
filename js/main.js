@@ -23,7 +23,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }, slideInterval);
     }
 
-    
+    // --- LÓGICA DEL MENÚ MÓVIL (HAMBURGUESA) ---
+const hamburger = document.getElementById('hamburger-menu');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburger && navLinks) {
+    // Al hacer clic en la hamburguesa, abrimos/cerramos el menú
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Truco pro: Cerrar el menú automáticamente si el usuario hace clic en un enlace
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
 
     // Aquí podrás agregar en el futuro la lógica del menú móvil
     // o animaciones globales al hacer scroll (Intersection Observers).

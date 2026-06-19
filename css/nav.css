@@ -76,3 +76,78 @@ nav {
     font-size: 1.1rem;
   }
 }
+
+/* =========================================
+   BOTÓN HAMBURGUESA (Oculto en PC)
+========================================= */
+.hamburger {
+  display: none; /* Por defecto no se ve */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 100; /* Asegura que el botón siempre esté por encima del menú */
+}
+
+/* Creamos las 3 rayitas de la hamburguesa */
+.hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--negro, #111010);
+  transition: all 0.3s ease-in-out; /* Animación fluida */
+  border-radius: 2px;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE PARA EL NAVBAR (Móviles)
+========================================= */
+@media (max-width: 768px) {
+  /* 1. Mostramos el botón hamburguesa */
+  .hamburger {
+    display: block; 
+  }
+
+  /* 2. Escondemos la lista de enlaces y la preparamos para desplegarse */
+  .nav-links {
+    position: absolute;
+    top: 75px; /* Altura de tu barra de navegación */
+    left: 0;
+    width: 100%;
+    background-color: var(--crema, #F0EAE3); /* Color de fondo del menú desplegado */
+    flex-direction: column; /* Ponemos los enlaces de arriba a abajo */
+    align-items: center;
+    padding: 30px 0;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    
+    /* El truco para esconderlo (lo subimos y lo hacemos invisible) */
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    pointer-events: none; /* Evita que le den clic cuando está invisible */
+  }
+
+  /* 3. Estilos de los enlaces en celular */
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  /* 4. LA CLASE 'ACTIVE' (Cuando el JS abre el menú) */
+  .nav-links.active {
+    transform: translateY(0); /* El menú baja */
+    opacity: 1; /* Se vuelve visible */
+    pointer-events: auto;
+  }
+
+  /* 5. ANIMACIÓN: Convertir la Hamburguesa en una "X" */
+  .hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0; /* La línea del medio desaparece */
+  }
+  .hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
