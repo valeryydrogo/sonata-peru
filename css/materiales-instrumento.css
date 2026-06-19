@@ -2,7 +2,7 @@
    SECCIÓN DE MATERIALES (Diseño a dos columnas y Light Theme)
    ========================================================================== */
 
-/* Contenedor principal con aire y separación del Header */
+/* Contenedor principal con protección de tamaño (box-sizing) */
 .materiales-instrumento {
   max-width: 1000px;
   margin: 140px auto 80px; 
@@ -12,28 +12,39 @@
   font-family: var(--body);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
   border: 1px solid #ebdcd0;
+  box-sizing: border-box; /* Fundamental para que el padding no expanda la caja */
 }
 
-/* Grilla para dividir en texto (izq) e imagen (der) */
+/* Grilla para dividir en texto e imagen */
 .materiales-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: stretch;
+  width: 100%;
+}
+
+/* Columna de Textos */
+.materiales-content {
+  min-width: 0; /* Evita que los textos largos o botones rompan la grilla */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Columna de la Imagen */
 .materiales-image-col {
+  min-width: 0; /* EL SECRETO: Obliga a la foto a respetar el ancho de la columna */
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
   background-color: #ebdcd0;
   display: flex;
 }
+
 .materiales-image-col img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Recorta la foto elegante sin deformarla */
   transition: opacity 0.3s ease;
 }
 
@@ -52,6 +63,8 @@
   align-items: center;
   margin-bottom: 28px;
   gap: 8px;
+  width: 100%;
+  overflow: hidden; /* Evita que el carrusel se salga hacia la derecha */
 }
 .scroll-arrow {
   background: #fff;
@@ -70,7 +83,7 @@
 }
 .scroll-arrow:hover { background: #8b1a2b; color: #fff; }
 
-/* Fila de chips y sus estados */
+/* Fila de chips */
 .materiales-instrumento .chip-row {
   display: flex;
   gap: 6px;
@@ -88,7 +101,7 @@
 .materiales-instrumento .chip-icon { width: 15px; height: 15px; display: inline-flex; flex-shrink: 0; }
 .materiales-instrumento .chip-icon svg { width: 100%; height: 100%; }
 
-/* Listas de materiales (Esencial y Recomendado) */
+/* Listas de materiales */
 .materiales-instrumento .wave { display: block; margin-bottom: 22px; width: 100%; height: 14px; }
 .materiales-instrumento .list-label { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; margin: 0 0 4px; text-transform: uppercase; }
 .materiales-instrumento .list-label.essential { color: #8b1a2b; }
@@ -107,17 +120,18 @@
 /* ==========================================================================
    DISEÑO RESPONSIVE (Celulares y Tablets)
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .materiales-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
   .materiales-instrumento {
-    margin: 120px 20px 60px; /* Asegura separación en móviles */
+    margin: 100px 20px 60px; /* Margen seguro para que no toque los bordes laterales del celular */
     padding: 30px 20px;
   }
   .materiales-image-col {
-    height: 250px; 
-    order: -1; /* Pone la imagen por encima de los textos en el celular */
+    height: 250px;
+    order: -1; /* Mueve la foto arriba de los textos en la vista móvil */
   }
   .materiales-instrumento .instrument-name { font-size: 34px; }
 }
