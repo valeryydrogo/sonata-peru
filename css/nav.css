@@ -134,6 +134,7 @@ nav {
 
   /* 2. Escondemos la lista de enlaces y la preparamos para desplegarse */
   .nav-links {
+    display: flex;
     position: absolute;
     top: 75px; /* Altura de tu barra de navegación */
     left: 0;
@@ -144,6 +145,8 @@ nav {
     padding: 30px 0;
     box-shadow: 0 10px 15px rgba(0,0,0,0.05);
     
+    z-index: 999;
+
     /* El truco para esconderlo (lo subimos y lo hacemos invisible) */
     transform: translateY(-150%);
     opacity: 0;
