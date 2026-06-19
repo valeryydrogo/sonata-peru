@@ -110,4 +110,44 @@ function renderMaterialesCard() {
       .replace(/\s+/g, '-');
     
     // Efecto de parpadeo suave al cambiar
-    imgElement.style.
+    imgElement.style.opacity = 0;
+    setTimeout(function() {
+      imgElement.src = '../assets/' + nombreLimpio + '.jpg'; 
+      imgElement.style.opacity = 1;
+    }, 150);
+  }
+
+  // Pinta los textos de la tarjeta
+  host.innerHTML =
+    '<svg class="wave" viewBox="0 0 600 14" preserveAspectRatio="none" aria-hidden="true">' +
+      '<path d="M0,7 Q15,0 30,7 T60,7 T90,7 T120,7 T150,7 T180,7 T210,7 T240,7 T270,7 T300,7 T330,7 T360,7 T390,7 T420,7 T450,7 T480,7 T510,7 T540,7 T570,7 T600,7" stroke="#8b1a2b" stroke-width="1.5" fill="none"/>' +
+    '</svg>' +
+    '<p class="instrument-name">' + d.name + '</p>' +
+    '<p class="instrument-level">Nivel iniciación</p>' +
+    '<p class="list-label essential">Esencial desde el día 1</p>' +
+    '<div class="essential-list">' + essentialItems + '</div>' +
+    '<p class="list-label recommended">También recomendado</p>' +
+    '<div>' + recommendedItems + '</div>';
+}
+
+// 3. Ejecutar todo cuando la página termine de cargar
+document.addEventListener('DOMContentLoaded', function () {
+  
+  // Renderizar la primera vez
+  renderMaterialesChips();
+  renderMaterialesCard();
+
+  // Activar las flechas de desplazamiento
+  var row = document.getElementById('chipRow');
+  var btnLeft = document.getElementById('btnScrollLeft');
+  var btnRight = document.getElementById('btnScrollRight');
+
+  if (btnLeft && btnRight && row) {
+    btnLeft.addEventListener('click', function() {
+      row.scrollBy({ left: -200, behavior: 'smooth' }); // Mueve a la izquierda
+    });
+    btnRight.addEventListener('click', function() {
+      row.scrollBy({ left: 200, behavior: 'smooth' });  // Mueve a la derecha
+    });
+  }
+});
