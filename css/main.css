@@ -445,6 +445,35 @@ section { padding: 96px 8%; }
   background-position: center !important; 
 }
 
+/* =========================================
+   MEJORA DEL BOTÓN DE WHATSAPP (Resaltado y Hover)
+========================================= */
+
+/* 1. Estado Normal del Botón (.pill-tag) */
+.pill-tag {
+  /* Estilos base que asumo que ya tiene (padding, etc.) */
+  display: inline-block !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s ease !important; /* IMPORTANTE: Hace que cualquier cambio sea suave y no brusco */
+
+  /* NUEVOS ESTILOS PARA RESALTAR */
+  border: 2px solid #faf7f4 !important; /* Borde más grueso (2px) y de color crema */
+  color: #faf7f4 !important; /* Texto de color crema */
+  font-weight: 600 !important; /* Texto un poco más grueso para mejor legibilidad */
+  background-color: transparent !important; /* Fondo transparente */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important; /* Sombra sutil para "despegar" el botón del fondo */
+}
+
+/* 2. Estado Hover (Al pasar el ratón por encima) */
+.pill-tag:hover {
+  background-color: #faf7f4 !important; /* ¡El fondo se llena de color crema! */
+  color: #8b1a2b !important; /* El texto cambia al color rojo corporativo de la escuela */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25) !important; /* La sombra se hace más pronunciada al levantarse */
+  transform: translateY(-2px) !important; /* El botón se mueve 2px hacia arriba para dar una sensación de que flota */
+}
 
 /* ═══════════════════════════════════════════
    ELEMENTOS INTERNOS (AJUSTADOS PARA FONDO OSCURO)
