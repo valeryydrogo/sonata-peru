@@ -746,3 +746,22 @@ footer { background: var(--negro); padding: 52px 8% 36px; }
 @media (prefers-reduced-motion: reduce) {
   .floating-note, .ab-note { animation: none; }
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* 1. Cuando la pantalla es menor a 992px (Tablets) -> 2 Columnas */
+@media (max-width: 992px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* 2. Cuando la pantalla es menor a 768px (Celulares) -> 1 Columna */
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr !important;
+    padding: 30px 16px !important; 
+  }
+}
