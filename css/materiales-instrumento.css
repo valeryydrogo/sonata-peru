@@ -144,23 +144,31 @@
 body {
     background-image: 
         linear-gradient(rgba(90, 27, 38, 0.92), rgba(90, 27, 38, 0.92)), 
-        url('../assets/fondoatras_cursos.jpg') !important;
+        url('../assets/violines-bg.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
 }
 
-/* 2. LA TARJETA: Le damos fondo crema y sombra para que resalte brutalmente */
+/* 2. EL ARREGLO: Volvemos invisible la caja gigante exterior */
+.materiales-instrumento {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* 3. LA TARJETA: Solo esta caja tendrá color crema y sombra */
 .materiales-grid {
     background-color: var(--crema, #F8F5F0) !important;
     border-radius: 20px !important;
     padding: 40px !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important; /* Sombra profunda para que flote */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important; /* Sombra profunda */
     margin-top: 50px !important;
     margin-bottom: 50px !important;
 }
 
-/* 3. COLORES DE TEXTO: Forzamos colores oscuros para que se lean perfecto sobre la tarjeta clara */
+/* 4. COLORES DE TEXTO: Oscuros para que se lean perfecto sobre la tarjeta */
 .materiales-content .section-title,
 .materiales-content p,
 #cardHost {
@@ -190,16 +198,45 @@ body {
 }
 
 /* =========================================================
-   DISEÑO RESPONSIVE (Móvil)
+   DISEÑO RESPONSIVE (Móvil) - TARJETA CREMA BLINDADA
 =========================================================== */
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll !important; /* Apaga parallax en celular */
+        background-attachment: scroll !important; /* Apaga parallax en celular para evitar bugs */
     }
+    
+    /* 1. Forzamos la tarjeta crema con márgenes para que se vea el fondo oscuro */
     .materiales-grid {
-        padding: 25px 15px !important;
-        margin-top: 30px !important;
-        margin-bottom: 30px !important;
-        border-radius: 12px !important;
+        background-color: var(--crema, #F8F5F0) !important;
+        padding: 30px 20px !important;
+        margin: 30px 15px !important; /* Margen a los lados para que no pegue a la pantalla */
+        border-radius: 16px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* 2. Reafirmamos los colores de texto oscuros para móvil */
+    .materiales-content .section-title,
+    .materiales-content p,
+    #cardHost,
+    #cardHost div,
+    #cardHost p,
+    #cardHost span,
+    #cardHost li {
+        color: var(--gris-oscuro, #333333) !important;
+    }
+
+    .materiales-content .eyebrow-text,
+    .materiales-content h2,
+    .materiales-content h3 {
+        color: var(--vino, #5A1B26) !important;
+    }
+
+    /* 3. Ajustes de la rayita y las flechas para móvil */
+    .eyebrow-line {
+        background-color: var(--vino, #5A1B26) !important;
+    }
+    
+    .chip-container .scroll-arrow {
+        color: var(--vino, #5A1B26) !important;
     }
 }
