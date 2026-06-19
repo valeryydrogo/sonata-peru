@@ -99,7 +99,24 @@ function renderMaterialesCard() {
     '<div>' + recommendedItems + '</div>';
 }
  
+
+
 document.addEventListener('DOMContentLoaded', function () {
+  // Tus funciones previas...
   renderMaterialesChips();
   renderMaterialesCard();
+
+  // Lógica para las flechas del carrusel de instrumentos
+  var row = document.getElementById('chipRow');
+  var btnLeft = document.getElementById('btnScrollLeft');
+  var btnRight = document.getElementById('btnScrollRight');
+
+  if (btnLeft && btnRight && row) {
+    btnLeft.addEventListener('click', function() {
+      row.scrollBy({ left: -200, behavior: 'smooth' }); // Retrocede
+    });
+    btnRight.addEventListener('click', function() {
+      row.scrollBy({ left: 200, behavior: 'smooth' });  // Avanza
+    });
+  }
 });
