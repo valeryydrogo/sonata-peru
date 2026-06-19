@@ -181,28 +181,28 @@ nav {
 
 
 /* =========================================================
-   ESTILOS: SECCIÓN NUESTRAS AULAS (GRILLA EXPANDIDA AL MÁXIMO)
+   ESTILOS: SECCIÓN NUESTRAS AULAS (Mosaico Secuencial Full Width)
 =========================================================== */
 
-.section-aulas {
+.section-aulas-secuencial {
     padding: 100px 5%; /* Usamos porcentajes para acercarnos a los bordes de la pantalla */
     background-color: var(--crema);
     display: flex;
     justify-content: center;
 }
 
-.aulas-wrapper {
-    max-width: 1800px; /* ¡Límite gigante para que llene pantallas grandes! */
+.aulas-wrapper-secuencial {
+    max-width: 1600px; /* Ancho máximo generoso para pantallas muy grandes */
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: center; /* Alineación vertical central */
     justify-content: space-between; /* Obliga al texto y las fotos a separarse a los extremos */
 }
 
 /* --- ESTILOS DE LA INFORMACIÓN (Izquierda) --- */
-.aulas-texto {
-    flex: 0 0 35%; /* Le decimos al texto: "Tú solo ocupa el 35% de la pantalla" */
-    padding-right: 40px; /* Un pequeño respiro antes de las fotos */
+.aulas-texto-secuencial {
+    flex: 0 0 35%; /* El texto ocupa el 35% del ancho disponible */
+    padding-right: 40px; /* Espacio limpio antes del mosaico */
 }
 
 .subtitulo-vino {
@@ -218,80 +218,86 @@ nav {
 
 .titulo-vino {
     color: var(--vino);
-    font-size: 42px; /* Título más grande para balancear */
-    font-family: 'Playfair Display', serif; 
+    font-size: 42px; /* Título grande y potente para balancear */
+    font-family: 'Playfair Display', serif; /* O tu serif principal */
     margin-bottom: 25px;
     line-height: 1.2;
 }
 
-.aulas-descripcion {
+/* --- JUEGO DE COLORES EN LA DESCRIPCIÓN --- */
+.aulas-descripcion-vibrante {
     color: var(--gris-oscuro);
     line-height: 1.8;
-    font-size: 18px; /* Texto un poco más grande */
+    font-size: 18px; /* Texto un poco más de cuerpo */
 }
 
-.aulas-descripcion .destaque-vino {
+/* 1. Destaque en Rojo Vino */
+.aulas-descripcion-vibrante .destaque-vino {
     color: var(--vino);
     font-weight: 600;
 }
 
-.aulas-descripcion .caja-crema {
-    background-color: rgba(255, 255, 255, 0.7);
+/* 2. Resaltado 'Caja de Color' */
+.aulas-descripcion-vibrante .caja-crema {
+    background-color: rgba(255, 255, 255, 0.7); /* Crema muy suave de fondo */
     color: var(--vino);
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: bold;
 }
 
-.aulas-descripcion .destaque-bold {
+/* 3. Destaque Bold */
+.aulas-descripcion-vibrante .destaque-bold {
     font-weight: bold;
 }
 
-/* --- ESTILOS DE LA GRILLA DE AULAS (Derecha - ¡AHORA SÍ LLENA TODO!) --- */
-.aulas-grid {
-    flex: 0 0 60%; /* ¡Las fotos ocupan el 60% del espacio de la pantalla! */
+/* --- ESTILOS DEL MOSAICO SECUENCIAL DE AULAS (Derecha - ¡AHORA SÍ UTILIZA TODOOOO!) --- */
+.aulas-mosaico-secuencial {
+    flex: 0 0 60%; /* ¡El mosaico secuencial ocupa el 60% del ancho de la pantalla! */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: auto auto; 
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas */
     gap: 30px; /* Fotos más separadas y elegantes */
 }
 
-/* Tarjeta base de cada imagen */
-.aula-img {
-    height: 350px; /* FOTOS ARRIBA MUCHO MÁS ALTAS */
+/* Tarjeta base de cada imagen secuencial */
+.mosaico-aula-item {
+    height: 350px; /* FOTOS ARRIBA MUCHO MÁS ALTAS para PC */
     background-size: cover;
     background-position: center;
-    border-radius: 12px; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
-    transition: transform 0.3s ease; 
+    border-radius: 12px; /* Bordes redondeados profesionales */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Sombra muy sutil */
+    transition: transform 0.3s ease; /* Pequeño efecto al hover */
 }
 
-.aula-img:hover {
-    transform: translateY(-5px); 
+/* Efecto hover suave y simple */
+.mosaico-aula-item:hover {
+    transform: translateY(-5px); /* Se levanta un poquito */
 }
 
-/* FOTO DE ABAJO: Más alta y ancha */
-.aula-img-3 {
-    grid-column: span 2; 
+/* FOTO DE ABAJO: Más alta y ancha, secuencial normal sin superposiciones */
+.mosaico-aula-item-ancha {
+    grid-column: span 2; /* Ocupa las dos columnas, secuencial de arriba a abajo */
     height: 450px; /* ¡FOTO INFERIOR GIGANTE! */
 }
 
 /* =========================================================
-   DISEÑO RESPONSIVE: SECCIÓN NUESTRAS AULAS (Móvil)
+   DISEÑO RESPONSIVE: SECCIÓN NUESTRAS AULAS (Móvil Pro)
 =========================================================== */
 @media (max-width: 900px) {
-    .aulas-wrapper {
-        flex-direction: column; 
+    .aulas-wrapper-secuencial {
+        flex-direction: column; /* Apilar texto arriba y fotos abajo */
         gap: 50px;
+        text-align: center;
     }
     
-    .aulas-texto, .aulas-grid {
-        flex: 1 1 100%; /* En móvil y tablets, ambas partes ocupan el 100% */
+    .aulas-texto-secuencial {
+        flex: 1 1 100%; /* En móvil, el texto ocupa el 100% */
         width: 100%;
         padding-right: 0;
     }
     
-    .section-aulas {
+    .section-aulas-secuencial {
         padding: 60px 20px;
     }
 
@@ -299,16 +305,18 @@ nav {
         font-size: 32px;
     }
     
-    .aulas-grid {
+    .aulas-mosaico-secuencial {
+        width: 100%;
         grid-template-columns: 1fr; /* Una columna en móvil */
         gap: 20px;
     }
     
-    .aula-img {
-        height: 250px !important; 
+    .mosaico-aula-item {
+        height: 250px !important; /* Fotos un poco más bajas en móvil */
     }
     
-    .aula-img-3 {
+    /* En móvil, la tercera foto no necesita spanear ni ser tan alta */
+    .mosaico-aula-item-ancha {
         grid-column: span 1;
         height: 250px !important;
     }
