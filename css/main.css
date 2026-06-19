@@ -23,9 +23,10 @@
   --borde:      rgba(17,16,16,0.1);
   --borde-g:    rgba(139,26,43,0.2);
 
-  --crema-principal: #F0EAE3; /* Tu color crema base */
-  --vino-principal: #5A1B26;  /* Tu color rojo vino base */
-  --gris-texto: #333333;       /* Un gris oscuro para legibilidad */
+  --crema-fondo: #F0EAE3;  /* Tu crema base */
+  --vino-caja: #5A1B26;    /* Tu rojo vino base (el del logo) */
+  --vino-texto: #8B1D35;   /* Un rojo vino ligeramente más claro para texto */
+  --gris-texto: #333333;   /* Un gris oscuro para legibilidad */
  
   --display:    'Cormorant Garamond', Georgia, serif;
   --body:       'Inter', system-ui, sans-serif;

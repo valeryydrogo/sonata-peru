@@ -178,36 +178,35 @@ nav {
   }
 }
 
-/* =======================================================
-   ESTILOS: SECCIÓN NUESTRAS AULAS (Versión Pro - Expandida)
-========================================================= */
+/* =========================================================
+   ESTILOS: SECCIÓN NUESTRAS AULAS (Versión Pro - Balanceada)
+=========================================================== */
 
 
-
-.aulas-seccion-completa {
-    padding: 100px 20px; /* Más espacio vertical para que respire */
-    background-color: var(--crema-principal);
+.seccion-aulas-completa {
+    padding: 100px 0; /* Más espacio vertical para que respire */
+    background-color: var(--crema-fondo);
     display: flex;
     justify-content: center;
-    overflow: hidden; /* Importante para que las imágenes superpuestas no creen scroll */
+    overflow: hidden; /* Evita scroll si las imágenes se superponen mucho */
 }
 
 .aulas-wrapper {
     max-width: 1400px; /* MUCHO MÁS ANCHO que antes para PC */
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center; /* Alineación vertical central */
-    gap: 80px; /* Buen espacio entre texto y mural */
+    gap: 80px; /* Buen espacio entre texto y mosaico */
 }
 
 /* --- ESTILOS DE LA INFORMACIÓN (Izquierda) --- */
-.aulas-info-pro {
-    flex: 1; /* Ocupa el 50% del ancho */
+.aulas-texto-content {
+    flex: 1; /* Ocupa el 50% en PC */
 }
 
-.subtitulo-pro {
+.subtitulo-vibrante {
     display: block;
-    color: var(--gris-texto); /* Color neutro para el subtítulo */
+    color: var(--gris-texto); /* Un tono más suave para el subtítulo */
     font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -216,66 +215,66 @@ nav {
     opacity: 0.7;
 }
 
-.titulo-aulas-pro {
-    color: var(--vino-principal); /* Título en el color principal */
+.titulo-elegante {
+    color: var(--vino-caja); /* Título en el color principal */
     font-size: 40px; /* Título grande y potente */
     font-family: 'Playfair Display', serif; /* O tu serif principal */
     margin-bottom: 30px;
     line-height: 1.1;
 }
 
-/* --- JUEGO DE COLORES EN LA DESCRIPCIÓN --- */
-.aulas-descripcion-pro {
+/* --- JUEGO DE COLORES EN LA DESCRIPCIÓN (Tu petición) --- */
+.descripcion-vibrante {
     color: var(--gris-texto);
     line-height: 1.8;
     font-size: 18px; /* Un poco más de cuerpo al texto */
     max-width: 550px; /* Límite de ancho para mejor legibilidad */
 }
 
-/* 1. Destaque en Rojo Vino (como links pero sin serlo) */
-.aulas-descripcion-pro .destaque-vino {
-    color: var(--vino-principal);
+/* 1. Destaque en Rojo Vino VIBRANTE (como links pero sin serlo) */
+.descripcion-vibrante .resaltado-vino {
+    color: var(--vino-texto);
     font-weight: 600;
 }
 
 /* 2. Resaltado 'Caja de Color' (Fondo Crema sobre Fondo Crema Ligeramente más claro, o viceversa) */
-.aulas-descripcion-pro .resaltado-crema-vino {
+.descripcion-vibrante .bg-vibrante-texto {
     background-color: #E6DFD6; /* Un crema ligeramente más oscuro para que resalte */
-    color: var(--vino-principal);
+    color: var(--vino-caja);
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: bold;
 }
 
 /* 3. Destaque Bold (Solo negrita para contraste) */
-.aulas-descripcion-pro .destaque-bold {
+.descripcion-vibrante .destaque-bold {
     font-weight: bold;
 }
 
-/* --- ESTILOS DEL MURAL PRO (Derecha) --- */
-.aulas-mural-pro {
-    flex: 1.2; /* Un poco más del 50% para que el mural tenga presencia */
+/* --- ESTILOS DEL MOSAICO MURAL (Derecha) --- */
+.aulas-mosaic-mural {
+    flex: 1.2; /* Un poco más del 50% para que el mural tenga presencia visual */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
-    position: relative; /* Clave para el posicionamiento absoluto de las imágenes */
-    height: 550px; /* ALTO TOTAL DEL MURAL */
+    position: relative; /* Clave para el posicionamiento absoluto */
+    height: 550px; /* ALTO TOTAL DEL MURAL en PC */
 }
 
 /* Tarjeta base de cada imagen */
-.aula-img {
+.mosaico-item {
     background-size: cover;
     background-position: center;
     border-radius: 16px; /* Bordes redondeados más suaves */
-    position: absolute; /* Para superposición dinámica */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Sombra suave para 3D */
+    position: absolute; /* Para superposición asimétrica */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Sombra suave para efecto 3D */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animación suave al hover */
     overflow: hidden; /* Para contener la etiqueta */
 }
 
 /* Pequeña etiqueta de texto dentro de la foto */
-.tag-aula-pro {
+.mosaico-tag {
     position: absolute;
     bottom: -1px; /* Soluciona un error visual de 1px */
     left: 0;
@@ -291,20 +290,20 @@ nav {
 }
 
 /* Efecto Hover: Las fotos se hacen un poco más grandes y se ponen al frente */
-.aula-img:hover {
+.mosaico-item:hover {
     transform: scale(1.05) translateZ(20px) !important;
     z-index: 10 !important; /* Se pone al frente */
     box-shadow: 0 20px 50px rgba(90, 27, 38, 0.2); /* Sombra color vino al hover */
 }
 
-.aula-img:hover .tag-aula-pro {
+.mosaico-item:hover .mosaico-tag {
     transform: translateY(0); /* Muestra la etiqueta */
 }
 
-/* === Posicionamiento Superpuesto Dinámico (Inspirado en tus referencias) === */
+/* === Posicionamiento Superpuesto Asimétrico (Inspirado en Referencias) === */
 
 /* Aula 1: Piano (Fondo) */
-.aula-img-1 {
+.aula-1 {
     width: 380px; /* Imágenes más grandes en PC */
     height: 280px;
     top: 50px;
@@ -313,7 +312,7 @@ nav {
 }
 
 /* Aula 2: Guitarras (Medio) */
-.aula-img-2 {
+.aula-2 {
     width: 420px;
     height: 320px;
     top: 0;
@@ -321,18 +320,18 @@ nav {
     z-index: 2;
 }
 
-/* Aula 3: Batería (Frente y Cruzada) */
-.aula-img-3 {
+/* Aula 3: Batería (Frente y Superpuesta) */
+.aula-3 {
     width: 450px;
     height: 350px;
     bottom: 0;
-    left: 10%; /* Superpuesta sobre las otras dos */
+    left: 10%; /* Superpuesta sobre las otras dos de forma dinámica */
     z-index: 3;
 }
 
-/* =======================================================
-   RESPONSIVE: SECCIÓN NUESTRAS AULAS (Para Móvil, se mantiene bien)
-========================================================= */
+/* =========================================================
+   DISEÑO RESPONSIVE: SECCIÓN NUESTRAS AULAS (Móvil Pro)
+=========================================================== */
 @media (max-width: 768px) {
     .aulas-wrapper {
         flex-direction: column; /* Apilar texto arriba y fotos abajo */
@@ -340,30 +339,30 @@ nav {
         text-align: center;
     }
     
-    .aulas-seccion-completa {
-        padding: 60px 15px;
+    .seccion-aulas-completa {
+        padding: 60px 0;
     }
 
-    .titulo-aulas-pro {
+    .titulo-elegante {
         font-size: 32px;
     }
     
-    .aulas-descripcion-pro {
+    .descripcion-vibrante {
         font-size: 16px;
         margin: 0 auto; /* Centrar texto */
     }
 
-    /* Adaptar el mural a móvil */
-    .aulas-mural-pro {
+    /* Adaptar el mural a móvil Pro */
+    .aulas-mosaic-mural {
         width: 100%;
         height: auto; /* Altura automática en móvil */
-        display: flex; /* Usamos flex en lugar de grid para apilar */
+        display: flex; /* Usamos flex para apilar */
         flex-direction: column;
         align-items: center;
         gap: 0px; /* Sin gap para superposición vertical */
     }
     
-    .aula-img {
+    .mosaico-item {
         position: relative; /* Volvemos a flujo normal */
         top: 0 !important;
         left: 0 !important;
@@ -371,15 +370,16 @@ nav {
         width: 90% !important; /* Casi todo el ancho móvil */
         max-width: 320px;
         height: 220px !important;
-        margin-bottom: -30px; /* Superposición vertical */
+        margin-bottom: -30px; /* Superposición vertical para mantener el estilo artístico */
     }
     
-    .aula-img:last-child {
+    /* El último no necesita margen negativo */
+    .mosaico-item:last-child {
         margin-bottom: 0;
     }
 
-    /* Mostrar las etiquetas fijas en móvil */
-    .tag-aula-pro {
+    /* Mostrar las etiquetas fijas en móvil (sin hover) */
+    .mosaico-tag {
         transform: translateY(0);
     }
 }
