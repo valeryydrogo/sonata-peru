@@ -178,33 +178,31 @@ nav {
   }
 }
 
-/* =========================================================
-   ESTILOS: SECCIÓN NUESTRAS AULAS (Versión Pro - Balanceada)
-=========================================================== */
 
 
 /* =========================================================
-   ESTILOS: SECCIÓN NUESTRAS AULAS (Grilla Simple Definitive)
+   ESTILOS: SECCIÓN NUESTRAS AULAS (GRILLA EXPANDIDA AL MÁXIMO)
 =========================================================== */
 
 .section-aulas {
-    padding: 100px 20px; /* Espacio vertical generoso */
+    padding: 100px 5%; /* Usamos porcentajes para acercarnos a los bordes de la pantalla */
     background-color: var(--crema);
     display: flex;
     justify-content: center;
 }
 
 .aulas-wrapper {
-    max-width: 1300px; /* Ancho generoso para PC pero sin exagerar */
+    max-width: 1800px; /* ¡Límite gigante para que llene pantallas grandes! */
     width: 100%;
     display: flex;
-    align-items: center; /* Alineación vertical central */
-    gap: 60px; /* Espacio limpio entre texto y fotos */
+    align-items: center;
+    justify-content: space-between; /* Obliga al texto y las fotos a separarse a los extremos */
 }
 
 /* --- ESTILOS DE LA INFORMACIÓN (Izquierda) --- */
 .aulas-texto {
-    flex: 1; /* Ocupa el 45% del ancho en PC */
+    flex: 0 0 35%; /* Le decimos al texto: "Tú solo ocupa el 35% de la pantalla" */
+    padding-right: 40px; /* Un pequeño respiro antes de las fotos */
 }
 
 .subtitulo-vino {
@@ -220,100 +218,98 @@ nav {
 
 .titulo-vino {
     color: var(--vino);
-    font-size: 36px;
-    font-family: 'Playfair Display', serif; /* O tu serif principal */
+    font-size: 42px; /* Título más grande para balancear */
+    font-family: 'Playfair Display', serif; 
     margin-bottom: 25px;
     line-height: 1.2;
 }
 
-/* --- JUEGO DE COLORES EN LA DESCRIPCIÓN --- */
 .aulas-descripcion {
     color: var(--gris-oscuro);
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 18px; /* Texto un poco más grande */
 }
 
-/* 1. Destaque en Rojo Vino */
 .aulas-descripcion .destaque-vino {
     color: var(--vino);
     font-weight: 600;
 }
 
-/* 2. Resaltado 'Caja de Color' */
 .aulas-descripcion .caja-crema {
-    background-color: rgba(255, 255, 255, 0.5); /* Crema muy suave */
+    background-color: rgba(255, 255, 255, 0.7);
     color: var(--vino);
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: bold;
 }
 
-/* 3. Destaque Bold */
 .aulas-descripcion .destaque-bold {
     font-weight: bold;
 }
 
-/* --- ESTILOS DE LA GRILLA DE AULAS (Derecha - Soluciona el espacio) --- */
+/* --- ESTILOS DE LA GRILLA DE AULAS (Derecha - ¡AHORA SÍ LLENA TODO!) --- */
 .aulas-grid {
-    flex: 1.3; /* Le damos más peso a la derecha para llenar el espacio vacío */
+    flex: 0 0 60%; /* ¡Las fotos ocupan el 60% del espacio de la pantalla! */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
-    grid-template-rows: auto auto; /* Dos filas */
-    gap: 20px; /* Espacio limpio entre fotos */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto; 
+    gap: 30px; /* Fotos más separadas y elegantes */
 }
 
 /* Tarjeta base de cada imagen */
 .aula-img {
-    height: 250px; /* Altura base para las fotos de arriba */
+    height: 350px; /* FOTOS ARRIBA MUCHO MÁS ALTAS */
     background-size: cover;
     background-position: center;
-    border-radius: 12px; /* Bordes redondeados profesionales */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra muy sutil */
-    transition: transform 0.3s ease; /* Pequeño efecto al hover */
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+    transition: transform 0.3s ease; 
 }
 
-/* Efecto hover suave y simple, sin superposiciones locas */
 .aula-img:hover {
-    transform: translateY(-5px); /* Se levanta un poquito */
+    transform: translateY(-5px); 
 }
 
-/* Posicionamiento y tamaño de la foto de abajo (spans across columns) */
+/* FOTO DE ABAJO: Más alta y ancha */
 .aula-img-3 {
-    grid-column: span 2; /* Ocupa las dos columnas, llenando el ancho de la grilla */
-    height: 300px; /* Un poco más alta para tener presencia */
+    grid-column: span 2; 
+    height: 450px; /* ¡FOTO INFERIOR GIGANTE! */
 }
 
 /* =========================================================
    DISEÑO RESPONSIVE: SECCIÓN NUESTRAS AULAS (Móvil)
 =========================================================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .aulas-wrapper {
-        flex-direction: column; /* Apilar texto arriba y fotos abajo */
-        gap: 40px;
-        text-align: center;
+        flex-direction: column; 
+        gap: 50px;
+    }
+    
+    .aulas-texto, .aulas-grid {
+        flex: 1 1 100%; /* En móvil y tablets, ambas partes ocupan el 100% */
+        width: 100%;
+        padding-right: 0;
     }
     
     .section-aulas {
-        padding: 60px 15px;
+        padding: 60px 20px;
     }
 
     .titulo-vino {
-        font-size: 28px;
+        font-size: 32px;
     }
     
     .aulas-grid {
-        width: 100%;
         grid-template-columns: 1fr; /* Una columna en móvil */
-        gap: 15px;
+        gap: 20px;
     }
     
     .aula-img {
-        height: 200px !important; /* Fotos un poco más bajas en móvil */
+        height: 250px !important; 
     }
     
-    /* En móvil, la tercera foto no necesita spanear */
     .aula-img-3 {
         grid-column: span 1;
-        height: 200px !important;
+        height: 250px !important;
     }
 }
