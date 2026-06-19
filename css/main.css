@@ -340,12 +340,73 @@ section { padding: 96px 8%; }
   border: 1px solid rgba(255, 255, 255, 0.5); /* Borde semitransparente que brilla un poco */
 }
  
-.values { margin-top: 32px; list-style: none; }
-.val-row { display: flex; gap: 16px; padding: 16px 0; border-bottom: 0.5px solid var(--borde); align-items: flex-start; }
-.val-row:last-child { border-bottom: none; }
-.val-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--granate); margin-top: 7px; flex-shrink: 0; }
-.val-title { font-size: 0.9rem; font-weight: 500; margin-bottom: 2px; }
-.val-desc { font-size: 0.83rem; color: var(--negro-3); }
+/* =========================================================
+   ESTILOS: LISTA DE VALORES ELEGANTE (Historia)
+=========================================================== */
+
+.valores-elegantes {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre cada punto */
+}
+
+/* Contenedor de cada ítem */
+.valor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 25px;
+    background-color: transparent;
+    border-left: 3px solid transparent; /* Borde invisible inicial */
+    border-radius: 0 12px 12px 0;
+    transition: all 0.3s ease; /* Animación suave */
+    cursor: default;
+}
+
+/* EFECTO HOVER: Lo que lo hace llamativo */
+.valor-item:hover {
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo sutil al pasar el mouse */
+    border-left: 3px solid var(--vino); /* Aparece la línea color vino */
+    transform: translateX(10px); /* Se mueve un poquito a la derecha */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+/* El Número Elegante (01, 02, 03) */
+.valor-numero {
+    font-family: 'Playfair Display', serif; /* Tipografía elegante */
+    font-size: 38px;
+    font-weight: bold;
+    color: var(--vino);
+    opacity: 0.4; /* Medio transparente inicialmente */
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse, el número cobra fuerza */
+.valor-item:hover .valor-numero {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* El Título del valor */
+.valor-titulo {
+    font-family: 'Playfair Display', serif; /* Misma fuente elegante del título principal */
+    font-size: 22px;
+    color: var(--vino);
+    margin: 0 0 8px 0;
+}
+
+/* La Descripción */
+.valor-desc {
+    font-family: sans-serif;
+    color: var(--gris-oscuro);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
 
 /* ═══════════════════════════════════════════
    CURSOS
