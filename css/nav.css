@@ -177,3 +177,167 @@ nav {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+/* =========================================
+   ESTILOS: SECCIÓN NUESTRAS AULAS (Mural)
+========================================= */
+
+.aulas-container {
+    padding: 80px 20px;
+    background-color: #f7f3ed; /* Un crema ligerísimamente diferente para separar secciones */
+    display: flex;
+    justify-content: center;
+}
+
+.aulas-content {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espacio entre el texto y las fotos */
+}
+
+/* Estilos del texto (Izquierda) */
+.aulas-text {
+    flex: 1; /* Ocupa el 50% en pantallas grandes */
+}
+
+.aulas-text .subtitulo {
+    display: block;
+    color: var(--vino);
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.aulas-text .titulo-aulas {
+    color: var(--vino);
+    font-size: 32px;
+    font-family: 'Playfair Display', serif; /* O tu serif principal */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.aulas-text p {
+    color: var(--gris-oscuro);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Estilos del Mural (Derecha) */
+.aulas-mural {
+    flex: 1; /* Ocupa el otro 50% */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px; /* Pequeño gap base */
+    position: relative; /* Para la superposición */
+    height: 400px; /* Altura fija para controlar el efecto */
+}
+
+/* Tarjeta base de cada aula */
+.aula-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    position: absolute; /* Clave para la superposición */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden; /* Para contener la etiqueta */
+    width: 260px; /* Tamaño base para las fotos */
+    height: 180px;
+}
+
+/* Pequeña etiqueta de texto dentro de la foto */
+.aula-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(90, 27, 38, 0.85); /* Fondo vino semi-transparente */
+    color: white;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    transform: translateY(100%); /* Escondida inicialmente */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto Hover: Las fotos se mueven un poco y la etiqueta sube */
+.aula-card:hover {
+    transform: scale(1.03) translateZ(10px) !important; /* El translateZ le da efecto 3D */
+    z-index: 10 !important; /* Se pone al frente al pasar el mouse */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.aula-card:hover .aula-tag {
+    transform: translateY(0);
+}
+
+/* === Posicionamiento Superpuesto (Inspirado en Referencia 1) === */
+
+.aula-1 {
+    top: 20px;
+    left: 0;
+    z-index: 1; /* Al fondo */
+}
+
+.aula-2 {
+    top: 0;
+    right: 0;
+    z-index: 2; /* Medio */
+}
+
+.aula-3 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centrado abajo */
+    z-index: 3; /* Al frente */
+    width: 280px; /* Un poco más grande la de enfrente */
+    height: 200px;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE PARA EL MURAL (Móviles)
+========================================= */
+@media (max-width: 768px) {
+    .aulas-content {
+        flex-direction: column; /* Apilar texto arriba y fotos abajo */
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .aulas-mural {
+        height: 500px; /* Más alto en móvil */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: -10px; /* Gap negativo para mantener superposición vertical */
+    }
+    
+    /* Reajustar posiciones y tamaños para móvil */
+    .aula-card {
+        position: relative; /* Volvemos a flujo normal */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: -10px 0; /* Superposición vertical */
+        width: 90% !important;
+        max-width: 300px;
+        height: 160px !important;
+        transform: rotate(0deg) !important; /* Quitamos rotaciones */
+    }
+    
+    /* Pequeño toque artístico en móvil: rotar ligeramente */
+    .aula-1 { transform: rotate(-2deg) !important; }
+    .aula-2 { transform: rotate(2deg) !important; z-index: 1;}
+    .aula-3 { transform: rotate(-1deg) !important; z-index: 2;}
+
+    /* Mostrar las etiquetas fijas en móvil (sin hover) */
+    .aula-tag {
+        transform: translateY(0);
+    }
+}
