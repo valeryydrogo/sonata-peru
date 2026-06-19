@@ -101,6 +101,29 @@ nav {
 }
 
 /* =========================================
+   DISEÑO BASE DEL BOTÓN HAMBURGUESA
+========================================= */
+.hamburger {
+  display: none; /* Se oculta en pantallas grandes de computadora */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000; /* Lo mantiene por encima del menú desplegado */
+}
+
+.hamburger-line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 6px 0; /* Separación entre las rayitas */
+  background-color: #5A1B26; /* Color rojo vino para que combine con tu logo */
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out; /* Animación suave */
+}
+
+
+/* =========================================
    DISEÑO RESPONSIVE PARA EL NAVBAR (Móviles)
 ========================================= */
 @media (max-width: 768px) {
