@@ -144,7 +144,7 @@
 body {
     background-image: 
         linear-gradient(rgba(90, 27, 38, 0.92), rgba(90, 27, 38, 0.92)), /* Overlay Guinda Profundo */
-        url('../assets/violines-bg.jpg') !important; /* Tu foto de violines */
+        url('../assets/fondoatras_cursos.jpg') !important; /* Tu foto de violines */
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
