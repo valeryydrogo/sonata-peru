@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- LÓGICA DEL MENÚ MÓVIL (HAMBURGUESA) ---
-const hamburger = document.getElementById('hamburger-menu');
-const navLinks = document.getElementById('nav-links');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
 if (hamburger && navLinks) {
     // Al hacer clic en la hamburguesa, abrimos/cerramos el menú
