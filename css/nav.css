@@ -10,6 +10,16 @@ nav {
   backdrop-filter: blur(14px);
   border-bottom: 0.5px solid var(--borde);
 }
+
+/* =========================================
+   ESTILOS PARA LA IMAGEN DEL LOGO
+========================================= */
+.nav-logo-img {
+  height: 45px; /* Define qué tan alto quieres el logo. Puedes subirlo a 50px o bajarlo a 35px según tu gusto */
+  width: auto; /* Mantiene las proporciones originales de la imagen para que no se estire */
+  display: block;
+  object-fit: contain;
+}
  
 .nav-logo { display: flex; align-items: center; gap: 10px; }
 .nav-logo-icon {
